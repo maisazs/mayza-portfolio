@@ -256,7 +256,17 @@
   }
 }
 
-@layer components, utilities;
+@layer components;
+
+@layer utilities {
+  .static {
+    position: static;
+  }
+
+  .contents {
+    display: contents;
+  }
+}
 
 :root {
   --pink: #fcbdd7;

@@ -1,11 +1,15 @@
 import Image from "next/image";
 import type { ComponentProps } from "react";
+import { withBasePath } from "@/lib/paths";
 
 type DecorativeStarProps = {
   variant?: "burst" | "sparkles";
   className?: string;
   size?: number;
-} & Omit<ComponentProps<typeof Image>, "src" | "width" | "height" | "alt">;
+} & Omit<
+  ComponentProps<typeof Image>,
+  "src" | "width" | "height" | "alt"
+>;
 
 export function DecorativeStar({
   variant = "burst",
@@ -13,7 +17,11 @@ export function DecorativeStar({
   size = 120,
   ...props
 }: DecorativeStarProps) {
-  const src = variant === "burst" ? "/decorations/star-burst.png" : "/decorations/sparkles.png";
+  const src = withBasePath(
+    variant === "burst"
+      ? "/decorations/star-burst.png"
+      : "/decorations/sparkles.png",
+  );
 
   return (
     <Image

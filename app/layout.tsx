@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import type { CSSProperties } from "react";
+import { withBasePath } from "@/lib/paths";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -7,10 +9,21 @@ export const metadata: Metadata = {
     "Portfólio de Mayza Ester, engenheira de software e desenvolvedora front-end.",
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+const textureVariables = {
+  "--paper-texture": `url("${withBasePath("/textures/paper.png")}")`,
+  "--numeric-texture": `url("${withBasePath("/textures/numeric-grid.png")}")`,
+} as CSSProperties;
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body style={textureVariables}>
+        {children}
+      </body>
     </html>
   );
 }
