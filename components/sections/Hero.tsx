@@ -14,36 +14,88 @@ export function Hero() {
       const mm = gsap.matchMedia();
 
       mm.add("(prefers-reduced-motion: no-preference)", () => {
-        const timeline = gsap.timeline({ defaults: { ease: "power3.out" } });
+        const introTimeline = gsap.timeline({
+          paused: true,
+          defaults: {
+            ease: "power3.out",
+          },
+        });
 
-        timeline
-          .from("[data-hero=eyebrow]", { y: 22, opacity: 0, duration: 0.7 })
-          .from("[data-hero=title] .hero-title__line", {
-            yPercent: 115,
-            rotate: 2,
-            duration: 1,
-            stagger: 0.12,
-          }, "-=0.35")
-          .from("[data-hero=copy]", { y: 28, opacity: 0, duration: 0.75 }, "-=0.55")
-          .from("[data-hero=actions] > *", {
-            y: 18,
+        introTimeline
+          .from("[data-hero=eyebrow]", {
+            y: 22,
             opacity: 0,
-            duration: 0.55,
-            stagger: 0.1,
-          }, "-=0.45")
-          .from("[data-hero=visual]", {
-            x: 42,
-            opacity: 0,
-            rotate: 1.5,
-            duration: 1,
-          }, "-=0.9")
-          .from("[data-hero=decor]", {
-            scale: 0,
-            rotate: -24,
-            opacity: 0,
-            stagger: 0.08,
-            duration: 0.65,
-          }, "-=0.55");
+            duration: 0.7,
+          })
+          .from(
+            "[data-hero=title] .hero-title__line",
+            {
+              yPercent: 115,
+              rotate: 2,
+              duration: 1,
+              stagger: 0.12,
+            },
+            "-=0.35",
+          )
+          .from(
+            "[data-hero=copy]",
+            {
+              y: 28,
+              opacity: 0,
+              duration: 0.75,
+            },
+            "-=0.55",
+          )
+          .from(
+            "[data-hero=actions] > *",
+            {
+              y: 18,
+              opacity: 0,
+              duration: 0.55,
+              stagger: 0.1,
+            },
+            "-=0.45",
+          )
+          .from(
+            "[data-hero=visual]",
+            {
+              x: 42,
+              opacity: 0,
+              rotate: 1.5,
+              duration: 1,
+            },
+            "-=0.9",
+          )
+          .from(
+            "[data-hero=decor]",
+            {
+              scale: 0,
+              rotate: -24,
+              opacity: 0,
+              stagger: 0.08,
+              duration: 0.65,
+            },
+            "-=0.55",
+          );
+
+        const startHeroAnimation = () => {
+          introTimeline.play(0);
+        };
+
+        const loaderAlreadyFinished =
+          document.documentElement.dataset.portfolioReady === "true";
+
+        if (loaderAlreadyFinished) {
+          startHeroAnimation();
+        } else {
+          window.addEventListener(
+            "portfolio:ready",
+            startHeroAnimation,
+            {
+              once: true,
+            },
+          );
+        }
 
         gsap.to("[data-hero=float]", {
           y: -14,
@@ -53,11 +105,20 @@ export function Hero() {
           yoyo: true,
           ease: "sine.inOut",
         });
+
+        return () => {
+          window.removeEventListener(
+            "portfolio:ready",
+            startHeroAnimation,
+          );
+        };
       });
 
       return () => mm.revert();
     },
-    { scope: root },
+    {
+      scope: root,
+    },
   );
 
   return (
