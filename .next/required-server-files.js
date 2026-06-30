@@ -2,7 +2,7 @@ self.__SERVER_FILES_MANIFEST={
   "version": 1,
   "config": {
     "env": {
-      "NEXT_PUBLIC_BASE_PATH": ""
+      "NEXT_PUBLIC_BASE_PATH": "/mayza-portfolio"
     },
     "webpack": null,
     "typescript": {
@@ -11,7 +11,7 @@ self.__SERVER_FILES_MANIFEST={
     "typedRoutes": false,
     "distDir": ".next",
     "cleanDistDir": true,
-    "assetPrefix": "",
+    "assetPrefix": "/mayza-portfolio",
     "cacheMaxMemorySize": 52428800,
     "configOrigin": "next.config.ts",
     "useFileSystemPublicRoutes": true,
@@ -44,7 +44,7 @@ self.__SERVER_FILES_MANIFEST={
         256,
         384
       ],
-      "path": "/_next/image/",
+      "path": "/mayza-portfolio/_next/image/",
       "loader": "default",
       "loaderFile": "",
       "domains": [],
@@ -79,7 +79,7 @@ self.__SERVER_FILES_MANIFEST={
       "maxInactiveAge": 60000,
       "pagesBufferLength": 5
     },
-    "basePath": "",
+    "basePath": "/mayza-portfolio",
     "sassOptions": {},
     "trailingSlash": true,
     "i18n": null,
