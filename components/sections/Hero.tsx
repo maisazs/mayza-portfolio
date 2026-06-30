@@ -1,10 +1,22 @@
 "use client";
 
+import Image from "next/image";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import { gsap } from "@/lib/gsap";
 import { DecorativeStar } from "@/components/ui/DecorativeStar";
 import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
+import { gsap } from "@/lib/gsap";
+import { withBasePath } from "@/lib/paths";
+import styles from "./Hero.module.css";
+
+/*
+ * Quando sua foto estiver pronta:
+ * 1. Salve o arquivo em public/images/mayza-hero.png
+ * 2. Troque a string vazia abaixo por "/images/mayza-hero.png"
+ *
+ * Dê preferência a uma imagem PNG ou WebP com fundo transparente.
+ */
+const HERO_IMAGE = "";
 
 export function Hero() {
   const root = useRef<HTMLElement>(null);
@@ -22,49 +34,40 @@ export function Hero() {
         });
 
         introTimeline
-          .from("[data-hero=eyebrow]", {
-            y: 22,
+          .from("[data-hero=topline]", {
+            y: 18,
             opacity: 0,
-            duration: 0.7,
+            duration: 0.6,
           })
           .from(
-            "[data-hero=title] .hero-title__line",
+            "[data-hero-line]",
             {
               yPercent: 115,
               rotate: 2,
-              duration: 1,
-              stagger: 0.12,
-            },
-            "-=0.35",
-          )
-          .from(
-            "[data-hero=copy]",
-            {
-              y: 28,
-              opacity: 0,
-              duration: 0.75,
-            },
-            "-=0.55",
-          )
-          .from(
-            "[data-hero=actions] > *",
-            {
-              y: 18,
-              opacity: 0,
-              duration: 0.55,
+              duration: 1.05,
               stagger: 0.1,
             },
-            "-=0.45",
+            "-=0.28",
           )
           .from(
             "[data-hero=visual]",
             {
-              x: 42,
+              y: 52,
+              scale: 0.94,
               opacity: 0,
-              rotate: 1.5,
               duration: 1,
             },
-            "-=0.9",
+            "-=0.72",
+          )
+          .from(
+            "[data-hero=copy]",
+            {
+              y: 24,
+              opacity: 0,
+              duration: 0.72,
+              stagger: 0.12,
+            },
+            "-=0.58",
           )
           .from(
             "[data-hero=decor]",
@@ -72,10 +75,20 @@ export function Hero() {
               scale: 0,
               rotate: -24,
               opacity: 0,
-              stagger: 0.08,
               duration: 0.65,
+              stagger: 0.08,
             },
-            "-=0.55",
+            "-=0.54",
+          )
+          .from(
+            "[data-hero=footer] > *",
+            {
+              y: 16,
+              opacity: 0,
+              duration: 0.55,
+              stagger: 0.08,
+            },
+            "-=0.42",
           );
 
         const startHeroAnimation = () => {
@@ -88,18 +101,14 @@ export function Hero() {
         if (loaderAlreadyFinished) {
           startHeroAnimation();
         } else {
-          window.addEventListener(
-            "portfolio:ready",
-            startHeroAnimation,
-            {
-              once: true,
-            },
-          );
+          window.addEventListener("portfolio:ready", startHeroAnimation, {
+            once: true,
+          });
         }
 
-        gsap.to("[data-hero=float]", {
-          y: -14,
-          rotate: 2,
+        gsap.to("[data-hero-float]", {
+          y: -9,
+          rotate: 1.5,
           duration: 2.8,
           repeat: -1,
           yoyo: true,
@@ -107,12 +116,92 @@ export function Hero() {
         });
 
         return () => {
-          window.removeEventListener(
-            "portfolio:ready",
-            startHeroAnimation,
-          );
+          window.removeEventListener("portfolio:ready", startHeroAnimation);
         };
       });
+
+      mm.add(
+        "(pointer: fine) and (prefers-reduced-motion: no-preference)",
+        () => {
+          const section = root.current;
+          const stage = section?.querySelector<HTMLElement>(
+            "[data-tilt-stage]",
+          );
+          const layers = gsap.utils.toArray<HTMLElement>(
+            "[data-depth]",
+            section ?? undefined,
+          );
+
+          if (!section || !stage) {
+            return;
+          }
+
+          gsap.set(stage, {
+            transformPerspective: 1200,
+            transformOrigin: "50% 50%",
+          });
+
+          const rotateXTo = gsap.quickTo(stage, "rotationX", {
+            duration: 0.65,
+            ease: "power3.out",
+          });
+
+          const rotateYTo = gsap.quickTo(stage, "rotationY", {
+            duration: 0.65,
+            ease: "power3.out",
+          });
+
+          const layerMotion = layers.map((layer) => {
+            const depth = Number(layer.dataset.depth ?? 1);
+
+            return {
+              xTo: gsap.quickTo(layer, "x", {
+                duration: 0.7,
+                ease: "power3.out",
+              }),
+              yTo: gsap.quickTo(layer, "y", {
+                duration: 0.7,
+                ease: "power3.out",
+              }),
+              depth,
+            };
+          });
+
+          const handlePointerMove = (event: PointerEvent) => {
+            const bounds = section.getBoundingClientRect();
+            const normalizedX =
+              ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
+            const normalizedY =
+              ((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
+
+            rotateYTo(normalizedX * 7);
+            rotateXTo(normalizedY * -6);
+
+            layerMotion.forEach(({ xTo, yTo, depth }) => {
+              xTo(normalizedX * 11 * depth);
+              yTo(normalizedY * 9 * depth);
+            });
+          };
+
+          const resetTilt = () => {
+            rotateXTo(0);
+            rotateYTo(0);
+
+            layerMotion.forEach(({ xTo, yTo }) => {
+              xTo(0);
+              yTo(0);
+            });
+          };
+
+          section.addEventListener("pointermove", handlePointerMove);
+          section.addEventListener("pointerleave", resetTilt);
+
+          return () => {
+            section.removeEventListener("pointermove", handlePointerMove);
+            section.removeEventListener("pointerleave", resetTilt);
+          };
+        },
+      );
 
       return () => mm.revert();
     },
@@ -122,74 +211,176 @@ export function Hero() {
   );
 
   return (
-    <section ref={root} id="inicio" className="hero paper-texture">
-      <div className="hero__content">
-        <p className="eyebrow" data-hero="eyebrow">
-          Engenheira de Software <span>✦</span> Front-end Developer
+    <section ref={root} id="inicio" className={styles.hero}>
+      <div className={styles.topline} data-hero="topline">
+        <p className={styles.eyebrow}>
+          Engenheira de Software <span aria-hidden="true">✦</span> Front-end
+          Developer
         </p>
 
-        <h1 className="hero-title" data-hero="title" aria-label="Mayza Ester">
-          <span className="hero-title__mask">
-            <span className="hero-title__line">Mayza</span>
-          </span>
-          <span className="hero-title__mask hero-title__mask--offset">
-            <span className="hero-title__line hero-title__line--accent">Ester</span>
-          </span>
-        </h1>
+        <p className={styles.edition}>Portfolio / 2026</p>
+      </div>
 
-        <div className="hero__copy" data-hero="copy">
-          <p className="hero__headline">
-            Desenvolvo interfaces que aproximam pessoas, ideias e produtos.
+      <h1
+        className={styles.displayTitle}
+        aria-label="Portfólio front-end de Mayza Ester"
+      >
+        <span className={styles.titleMask}>
+          <span className={styles.titlePrimary} data-hero-line>
+            Front-end
+          </span>
+        </span>
+
+        <span className={`${styles.titleMask} ${styles.titleMaskAccent}`}>
+          <span className={styles.titleAccent} data-hero-line>
+            Portfolio
+          </span>
+        </span>
+      </h1>
+
+      <div className={styles.composition}>
+        <aside className={styles.identity} data-hero="copy">
+          <span className={styles.microIndex}>01 / Apresentação</span>
+
+          <h2>Mayza Ester</h2>
+
+          <p>
+            Desenvolvo interfaces responsivas que aproximam pessoas, ideias e
+            produtos — com clareza, cuidado e personalidade.
           </p>
-          <p className="hero__description">
-            Desenvolvedora front-end freelancer, com experiência na criação de páginas e experiências digitais responsivas, funcionais e visualmente cuidadosas.
-          </p>
+
+          <a
+            className={styles.scrollLink}
+            href="#sobre"
+            aria-label="Ir para a seção sobre mim"
+          >
+            <span>Explorar</span>
+            <i aria-hidden="true">↘</i>
+          </a>
+        </aside>
+
+        <div className={styles.portraitZone} data-hero="visual">
+          <div className={styles.portraitStage} data-tilt-stage>
+            <div
+              className={styles.orbitOuter}
+              data-depth="0.25"
+              aria-hidden="true"
+            />
+
+            <div
+              className={styles.orbitInner}
+              data-depth="0.4"
+              aria-hidden="true"
+            />
+
+            <div
+              className={styles.portraitGlow}
+              data-depth="0.55"
+              aria-hidden="true"
+            />
+
+            <div
+              className={styles.portraitShadow}
+              data-depth="0.75"
+              aria-hidden="true"
+            />
+
+            <div className={styles.portrait} data-depth="1.05">
+              {HERO_IMAGE ? (
+                <Image
+                  className={styles.portraitImage}
+                  src={withBasePath(HERO_IMAGE)}
+                  alt="Mayza Ester"
+                  fill
+                  priority
+                  sizes="(max-width: 720px) 82vw, (max-width: 1023px) 520px, 430px"
+                />
+              ) : (
+                <PhotoPlaceholder
+                  className={styles.portraitPlaceholder}
+                  label="ADICIONE SUA FOTO PNG AQUI"
+                />
+              )}
+            </div>
+
+            <div
+              className={`${styles.tagShell} ${styles.tagShellTop}`}
+              data-depth="1.35"
+            >
+              <div className={styles.floatingTag}>
+                <i aria-hidden="true" />
+                Interfaces com intenção
+              </div>
+            </div>
+
+            <div
+              className={`${styles.tagShell} ${styles.tagShellBottom}`}
+              data-depth="1.55"
+            >
+              <div className={styles.floatingTag} data-hero-float>
+                <i aria-hidden="true" />
+                Código + design
+              </div>
+            </div>
+
+            <DecorativeStar
+              variant="burst"
+              className={`${styles.decorativeStar} ${styles.starBurst}`}
+              size={120}
+              data-depth="1.25"
+              data-hero="decor"
+            />
+
+            <DecorativeStar
+              variant="sparkles"
+              className={`${styles.decorativeStar} ${styles.starSparkles}`}
+              size={72}
+              data-depth="1.5"
+              data-hero="decor"
+            />
+
+            <span
+              className={styles.verticalLabel}
+              data-depth="0.9"
+              aria-hidden="true"
+            >
+              MAYZA / FRONT-END / 2026
+            </span>
+          </div>
         </div>
 
-        <div className="hero__actions" data-hero="actions">
+        <aside className={styles.expertise} data-hero="copy">
+          <p className={styles.expertiseIntro}>
+            Transformo conceitos em experiências digitais funcionais,
+            acessíveis e visualmente cuidadosas.
+          </p>
+
+          <ul aria-label="Especialidades">
+            <li>UI / Front-end</li>
+            <li>Landing pages</li>
+            <li>Next.js &amp; TypeScript</li>
+            <li>WordPress &amp; Elementor</li>
+          </ul>
+        </aside>
+      </div>
+
+      <div className={styles.footer} data-hero="footer">
+        <div className={styles.actions}>
           <a className="button button--dark" href="#projetos">
             Ver projetos <span aria-hidden="true">↘</span>
           </a>
+
           <a className="button button--ghost" href="#contato">
             Falar comigo <span aria-hidden="true">✦</span>
           </a>
         </div>
 
-        <div className="hero__signature" aria-hidden="true">
-          <span>CODE WITH CARE</span>
-          <span>2026</span>
-        </div>
-      </div>
-
-      <div className="hero__visual" data-hero="visual">
-        <div className="hero__code-panel numeric-texture" aria-hidden="true">
-          <span>01 / HUMAN INTERFACE</span>
-          <strong>soft code</strong>
-          <span>strong craft / responsive / accessible</span>
-        </div>
-
-        <div className="hero__photo-frame">
-          <PhotoPlaceholder className="hero__photo" />
-          <span className="hero__photo-caption">portrait_01.jpg — adicionar depois</span>
-        </div>
-
-        <DecorativeStar
-          variant="burst"
-          className="hero__star hero__star--burst"
-          size={150}
-          data-hero="decor"
-        />
-        <DecorativeStar
-          variant="sparkles"
-          className="hero__star hero__star--sparkles"
-          size={88}
-          data-hero="decor"
-        />
-
-        <div className="hero__note" data-hero="float">
-          <span>interfaces</span>
-          <strong>com intenção</strong>
-          <span>e personalidade.</span>
+        <div className={styles.pagination} aria-hidden="true">
+          <strong>01</strong>
+          <span>
+            <i />
+          </span>
+          <small>05</small>
         </div>
       </div>
     </section>
