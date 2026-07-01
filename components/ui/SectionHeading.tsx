@@ -1,5 +1,5 @@
 type SectionHeadingProps = {
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   description?: string;
   light?: boolean;
@@ -13,7 +13,7 @@ export function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <header className="section-heading">
-      <p className={`eyebrow ${light ? "eyebrow--light" : ""}`}>{eyebrow}</p>
+      {eyebrow && <p className={`eyebrow ${light ? "eyebrow--light" : ""}`}>{eyebrow}</p>}
       <h2 className={`section-title ${light ? "section-title--light" : ""}`}>{title}</h2>
       {description ? (
         <p className={`section-description ${light ? "section-description--light" : ""}`}>

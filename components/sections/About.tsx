@@ -7,48 +7,45 @@ export function About() {
     <section id="sobre" className="about paper-texture section-shell">
       <div className="about__visual">
         <div className="about__photo about__photo--one">
-          <PhotoPlaceholder label="ADICIONAR FOTO 02" />
+          <img src="/images/image-3.jpeg" alt="Computer" draggable={false} />
         </div>
         <div className="about__photo about__photo--two">
-          <PhotoPlaceholder label="ADICIONAR FOTO 03" />
+          <img src="/images/image-2.png" alt="Mayza Ester" draggable={false} />
         </div>
         <div className="about__tape" aria-hidden="true" />
         <div className="about__scribble" aria-hidden="true">
-          curiosidade → prática → evolução
+          identidade → interface → impacto
         </div>
-        <DecorativeStar className="about__star" size={110} />
+        <DecorativeStar className="about__star" size={110} draggable={false} />
       </div>
 
       <div className="about__content">
         <SectionHeading
-          eyebrow="Sobre mim / 02"
-          title="Por trás do código, existe intenção."
+          title="Eu, além
+do código."
         />
 
         <div className="about__copy">
           <p>
-            Sou <strong>Mayza Ester</strong>, engenheira de software e desenvolvedora front-end. Atuei de fevereiro de 2025 a fevereiro de 2026 como estagiária de desenvolvimento front-end na Tunni, período em que participei da construção e evolução de experiências digitais.
+            Sou <strong>Mayza Ester</strong>, engenheira de software formada pela Unileste no primeiro semestre de 2026 e desenvolvedora front-end.
           </p>
           <p>
-            Atualmente trabalho como freelancer, desenvolvendo projetos front-end e aprofundando meus conhecimentos em tecnologias modernas. Meu objetivo é construir interfaces bonitas, funcionais, responsivas e agradáveis de usar.
-          </p>
-          <p>
-            Enxergo cada projeto como uma oportunidade de unir raciocínio técnico, atenção aos detalhes e sensibilidade visual.
+            Atualmente, atuo como freelancer no desenvolvimento de sites únicos, funcionais e responsivos. Crio projetos que fogem do comum e traduzem a identidade de cada cliente, ajudando empresas e profissionais a tirar ideias do papel ou renovar sua presença digital. É nessa área que concentro minha carreira e busco construir novas parcerias.
           </p>
         </div>
 
         <div className="about__facts">
           <div>
-            <strong>01 ano</strong>
-            <span>na Tunni</span>
+            <strong>2026</strong>
+            <span>ENGENHARIA DE SOFTWARE</span>
           </div>
           <div>
-            <strong>7+ skills</strong>
-            <span>em evolução</span>
+            <strong>FREELANCER</strong>
+            <span>PROJETOS E PARCERIAS</span>
           </div>
           <div>
             <strong>100%</strong>
-            <span>foco em front-end</span>
+            <span>FOCO EM FRONT-END</span>
           </div>
         </div>
       </div>

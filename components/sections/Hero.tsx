@@ -284,6 +284,7 @@ export function Hero() {
                   fill
                   priority
                   sizes="(max-width: 720px) 82vw, (max-width: 1023px) 520px, 430px"
+                  draggable={false}
                 />
               ) : (
                 <PhotoPlaceholder
