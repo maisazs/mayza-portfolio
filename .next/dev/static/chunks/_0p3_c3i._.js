@@ -1059,9 +1059,48 @@ function Timeline() {
             }, {
                 "Timeline.useGSAP": (context)=>{
                     const { desktop, mobile, reduceMotion } = context.conditions;
-                    if (reduceMotion) return;
+                    if (reduceMotion) {
+                        return;
+                    }
                     const cards = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].utils.toArray(".timeline-card");
                     const dots = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].utils.toArray(".timeline-index__dot");
+                    const bookTimeline = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].timeline({
+                        scrollTrigger: {
+                            trigger: ".timeline__intro",
+                            start: "top 76%",
+                            once: true
+                        }
+                    });
+                    bookTimeline.from(".timeline__book", {
+                        y: 55,
+                        rotate: 2,
+                        opacity: 0,
+                        duration: 0.9,
+                        ease: "power3.out"
+                    }).from(".timeline__book-cover", {
+                        y: 25,
+                        opacity: 0,
+                        duration: 0.7,
+                        ease: "power3.out"
+                    }, "-=0.7").from(".timeline__book-page--left", {
+                        rotationY: 55,
+                        x: 45,
+                        opacity: 0,
+                        duration: 0.9,
+                        ease: "power4.out"
+                    }, "-=0.55").from(".timeline__book-page--right", {
+                        rotationY: -55,
+                        x: -45,
+                        opacity: 0,
+                        duration: 0.9,
+                        ease: "power4.out"
+                    }, "-=0.82").from(".timeline__book-page > *", {
+                        y: 12,
+                        opacity: 0,
+                        duration: 0.4,
+                        stagger: 0.035,
+                        ease: "power2.out"
+                    }, "-=0.45");
                     if (desktop) {
                         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].set(cards, {
                             autoAlpha: 0,
@@ -1074,7 +1113,7 @@ function Timeline() {
                             rotate: 0
                         });
                         dots[0]?.classList.add("is-active");
-                        const tl = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].timeline({
+                        const timeline = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].timeline({
                             scrollTrigger: {
                                 trigger: ".timeline__stage",
                                 start: "top top+=80",
@@ -1084,16 +1123,18 @@ function Timeline() {
                                 anticipatePin: 1
                             }
                         });
-                        tl.to(".timeline-progress__fill", {
+                        timeline.to(".timeline-progress__fill", {
                             scaleY: 1,
                             ease: "none",
                             duration: __TURBOPACK__imported__module__$5b$project$5d2f$data$2f$timeline$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["timelineItems"].length
                         }, 0);
                         cards.forEach({
                             "Timeline.useGSAP": (card, index)=>{
-                                if (index === 0) return;
+                                if (index === 0) {
+                                    return;
+                                }
                                 const previous = cards[index - 1];
-                                tl.to(previous, {
+                                timeline.to(previous, {
                                     autoAlpha: 0,
                                     y: -42,
                                     rotate: -1.2,
@@ -1158,7 +1199,9 @@ function Timeline() {
                 }
             }["Timeline.useGSAP"]);
             return ({
-                "Timeline.useGSAP": ()=>mm.revert()
+                "Timeline.useGSAP": ()=>{
+                    mm.revert();
+                }
             })["Timeline.useGSAP"];
         }
     }["Timeline.useGSAP"], {
@@ -1169,13 +1212,830 @@ function Timeline() {
         id: "trajetoria",
         className: "timeline section-shell",
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$SectionHeading$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SectionHeading"], {
-                eyebrow: "Trajetória / 03",
-                title: "Cada etapa adicionou uma nova camada ao meu trabalho.",
-                description: "Uma linha do tempo entre formação, experiência prática e o próximo capítulo profissional."
-            }, void 0, false, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "timeline__intro",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$SectionHeading$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SectionHeading"], {
+                        title: "Cada etapa adicionou uma nova camada ao meu trabalho.",
+                        description: "Uma linha do tempo entre formação, experiência prática e o próximo capítulo profissional."
+                    }, void 0, false, {
+                        fileName: "[project]/components/sections/Timeline.tsx",
+                        lineNumber: 241,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "timeline__book",
+                        "aria-label": "Livro aberto com referências pessoais de Mayza",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "timeline__book-cover",
+                                "aria-hidden": "true"
+                            }, void 0, false, {
+                                fileName: "[project]/components/sections/Timeline.tsx",
+                                lineNumber: 250,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "timeline__book-shadow",
+                                "aria-hidden": "true"
+                            }, void 0, false, {
+                                fileName: "[project]/components/sections/Timeline.tsx",
+                                lineNumber: 255,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "timeline__book-spread",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
+                                        className: "timeline__book-page timeline__book-page--left",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "timeline__book-page-number",
+                                                children: "01"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/sections/Timeline.tsx",
+                                                lineNumber: 262,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "timeline__book-chapter",
+                                                children: "random notes"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/sections/Timeline.tsx",
+                                                lineNumber: 266,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                                className: "timeline__book-year",
+                                                children: "random-notes.js"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/sections/Timeline.tsx",
+                                                lineNumber: 270,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "timeline__book-line",
+                                                "aria-hidden": "true"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/sections/Timeline.tsx",
+                                                lineNumber: 274,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "timeline__code-window",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "timeline__code-toolbar",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "timeline__code-dots",
+                                                                "aria-hidden": "true",
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {}, void 0, false, {
+                                                                        fileName: "[project]/components/sections/Timeline.tsx",
+                                                                        lineNumber: 285,
+                                                                        columnNumber: 21
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {}, void 0, false, {
+                                                                        fileName: "[project]/components/sections/Timeline.tsx",
+                                                                        lineNumber: 286,
+                                                                        columnNumber: 21
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {}, void 0, false, {
+                                                                        fileName: "[project]/components/sections/Timeline.tsx",
+                                                                        lineNumber: 287,
+                                                                        columnNumber: 21
+                                                                    }, this)
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/components/sections/Timeline.tsx",
+                                                                lineNumber: 281,
+                                                                columnNumber: 19
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                children: "random-notes.js"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/components/sections/Timeline.tsx",
+                                                                lineNumber: 290,
+                                                                columnNumber: 19
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/components/sections/Timeline.tsx",
+                                                        lineNumber: 280,
+                                                        columnNumber: 17
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("pre", {
+                                                        className: "timeline__book-code",
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "timeline__code-line",
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            className: "timeline__code-number",
+                                                                            children: "01"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/components/sections/Timeline.tsx",
+                                                                            lineNumber: 296,
+                                                                            columnNumber: 23
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            className: "timeline__code-content",
+                                                                            children: [
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                    className: "timeline__code-keyword",
+                                                                                    children: "const"
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                                    lineNumber: 301,
+                                                                                    columnNumber: 25
+                                                                                }, this),
+                                                                                " ",
+                                                                                "platform =",
+                                                                                " ",
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                    className: "timeline__code-string",
+                                                                                    children: '"9¾"'
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                                    lineNumber: 305,
+                                                                                    columnNumber: 25
+                                                                                }, this),
+                                                                                ";"
+                                                                            ]
+                                                                        }, void 0, true, {
+                                                                            fileName: "[project]/components/sections/Timeline.tsx",
+                                                                            lineNumber: 300,
+                                                                            columnNumber: 23
+                                                                        }, this)
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                    lineNumber: 295,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "timeline__code-line",
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            className: "timeline__code-number",
+                                                                            children: "02"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/components/sections/Timeline.tsx",
+                                                                            lineNumber: 313,
+                                                                            columnNumber: 23
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            className: "timeline__code-content",
+                                                                            children: [
+                                                                                "playlist.",
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                    className: "timeline__code-function",
+                                                                                    children: "play"
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                                    lineNumber: 319,
+                                                                                    columnNumber: 25
+                                                                                }, this),
+                                                                                "(",
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                    className: "timeline__code-string",
+                                                                                    children: '"Bad Omens"'
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                                    lineNumber: 323,
+                                                                                    columnNumber: 25
+                                                                                }, this),
+                                                                                ");"
+                                                                            ]
+                                                                        }, void 0, true, {
+                                                                            fileName: "[project]/components/sections/Timeline.tsx",
+                                                                            lineNumber: 317,
+                                                                            columnNumber: 23
+                                                                        }, this)
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                    lineNumber: 312,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "timeline__code-line",
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            className: "timeline__code-number",
+                                                                            children: "03"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/components/sections/Timeline.tsx",
+                                                                            lineNumber: 331,
+                                                                            columnNumber: 23
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            className: "timeline__code-content",
+                                                                            children: [
+                                                                                "playlist.",
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                    className: "timeline__code-function",
+                                                                                    children: "queue"
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                                    lineNumber: 337,
+                                                                                    columnNumber: 25
+                                                                                }, this),
+                                                                                "(",
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                    className: "timeline__code-string",
+                                                                                    children: '"Shawn Mendes"'
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                                    lineNumber: 341,
+                                                                                    columnNumber: 25
+                                                                                }, this),
+                                                                                ");"
+                                                                            ]
+                                                                        }, void 0, true, {
+                                                                            fileName: "[project]/components/sections/Timeline.tsx",
+                                                                            lineNumber: 335,
+                                                                            columnNumber: 23
+                                                                        }, this)
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                    lineNumber: 330,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "timeline__code-line",
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            className: "timeline__code-number",
+                                                                            children: "04"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/components/sections/Timeline.tsx",
+                                                                            lineNumber: 349,
+                                                                            columnNumber: 23
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            className: "timeline__code-content",
+                                                                            children: [
+                                                                                "catCount",
+                                                                                " ",
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                    className: "timeline__code-operator",
+                                                                                    children: "+="
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                                    lineNumber: 355,
+                                                                                    columnNumber: 25
+                                                                                }, this),
+                                                                                " ",
+                                                                                "2;"
+                                                                            ]
+                                                                        }, void 0, true, {
+                                                                            fileName: "[project]/components/sections/Timeline.tsx",
+                                                                            lineNumber: 353,
+                                                                            columnNumber: 23
+                                                                        }, this)
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                    lineNumber: 348,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "timeline__code-line",
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            className: "timeline__code-number",
+                                                                            children: "05"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/components/sections/Timeline.tsx",
+                                                                            lineNumber: 363,
+                                                                            columnNumber: 23
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            className: "timeline__code-content",
+                                                                            children: [
+                                                                                "git.",
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                    className: "timeline__code-function",
+                                                                                    children: "commit"
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                                    lineNumber: 369,
+                                                                                    columnNumber: 25
+                                                                                }, this),
+                                                                                "(",
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                    className: "timeline__code-string",
+                                                                                    children: '"mischief managed"'
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                                    lineNumber: 373,
+                                                                                    columnNumber: 25
+                                                                                }, this),
+                                                                                ");"
+                                                                            ]
+                                                                        }, void 0, true, {
+                                                                            fileName: "[project]/components/sections/Timeline.tsx",
+                                                                            lineNumber: 367,
+                                                                            columnNumber: 23
+                                                                        }, this)
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                    lineNumber: 362,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "timeline__code-line",
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            className: "timeline__code-number",
+                                                                            children: "06"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/components/sections/Timeline.tsx",
+                                                                            lineNumber: 381,
+                                                                            columnNumber: 23
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            className: "timeline__code-content",
+                                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                className: "timeline__code-comment",
+                                                                                children: "// somewhere between fiction and front-end"
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/components/sections/Timeline.tsx",
+                                                                                lineNumber: 386,
+                                                                                columnNumber: 25
+                                                                            }, this)
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/components/sections/Timeline.tsx",
+                                                                            lineNumber: 385,
+                                                                            columnNumber: 23
+                                                                        }, this)
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                    lineNumber: 380,
+                                                                    columnNumber: 21
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/components/sections/Timeline.tsx",
+                                                            lineNumber: 294,
+                                                            columnNumber: 19
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/sections/Timeline.tsx",
+                                                        lineNumber: 293,
+                                                        columnNumber: 17
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/components/sections/Timeline.tsx",
+                                                lineNumber: 279,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "timeline__book-note timeline__book-note--left",
+                                                children: "music on, world off."
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/sections/Timeline.tsx",
+                                                lineNumber: 395,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "timeline__book-mini-note",
+                                                children: "currently debugging the plot..."
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/sections/Timeline.tsx",
+                                                lineNumber: 399,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
+                                                className: "timeline__book-footer",
+                                                children: "approved by the cats"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/sections/Timeline.tsx",
+                                                lineNumber: 403,
+                                                columnNumber: 15
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/sections/Timeline.tsx",
+                                        lineNumber: 261,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
+                                        className: "timeline__book-page timeline__book-page--right",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "timeline__book-page-number",
+                                                children: "02"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/sections/Timeline.tsx",
+                                                lineNumber: 409,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "timeline__book-chapter",
+                                                children: "side quests"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/sections/Timeline.tsx",
+                                                lineNumber: 413,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                                className: "timeline__book-year",
+                                                children: "side-quests.md"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/sections/Timeline.tsx",
+                                                lineNumber: 417,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "timeline__book-line",
+                                                "aria-hidden": "true"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/sections/Timeline.tsx",
+                                                lineNumber: 421,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "timeline__code-window",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "timeline__code-toolbar",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "timeline__code-dots",
+                                                                "aria-hidden": "true",
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {}, void 0, false, {
+                                                                        fileName: "[project]/components/sections/Timeline.tsx",
+                                                                        lineNumber: 432,
+                                                                        columnNumber: 21
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {}, void 0, false, {
+                                                                        fileName: "[project]/components/sections/Timeline.tsx",
+                                                                        lineNumber: 433,
+                                                                        columnNumber: 21
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {}, void 0, false, {
+                                                                        fileName: "[project]/components/sections/Timeline.tsx",
+                                                                        lineNumber: 434,
+                                                                        columnNumber: 21
+                                                                    }, this)
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/components/sections/Timeline.tsx",
+                                                                lineNumber: 428,
+                                                                columnNumber: 19
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                children: "side-quests.md"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/components/sections/Timeline.tsx",
+                                                                lineNumber: 437,
+                                                                columnNumber: 19
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/components/sections/Timeline.tsx",
+                                                        lineNumber: 427,
+                                                        columnNumber: 17
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("pre", {
+                                                        className: "timeline__book-code",
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "timeline__code-line",
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            className: "timeline__code-number",
+                                                                            children: "01"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/components/sections/Timeline.tsx",
+                                                                            lineNumber: 443,
+                                                                            columnNumber: 23
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            className: "timeline__code-content",
+                                                                            children: [
+                                                                                "nextDestination",
+                                                                                " ",
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                    className: "timeline__code-operator",
+                                                                                    children: "??="
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                                    lineNumber: 449,
+                                                                                    columnNumber: 25
+                                                                                }, this),
+                                                                                " ",
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                    className: "timeline__code-string",
+                                                                                    children: '"unknown"'
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                                    lineNumber: 452,
+                                                                                    columnNumber: 25
+                                                                                }, this),
+                                                                                ";"
+                                                                            ]
+                                                                        }, void 0, true, {
+                                                                            fileName: "[project]/components/sections/Timeline.tsx",
+                                                                            lineNumber: 447,
+                                                                            columnNumber: 23
+                                                                        }, this)
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                    lineNumber: 442,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "timeline__code-line",
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            className: "timeline__code-number",
+                                                                            children: "02"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/components/sections/Timeline.tsx",
+                                                                            lineNumber: 460,
+                                                                            columnNumber: 23
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            className: "timeline__code-content",
+                                                                            children: [
+                                                                                "team.",
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                    className: "timeline__code-function",
+                                                                                    children: "support"
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                                    lineNumber: 466,
+                                                                                    columnNumber: 25
+                                                                                }, this),
+                                                                                "(",
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                    className: "timeline__code-string",
+                                                                                    children: '"Cruzeiro"'
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                                    lineNumber: 470,
+                                                                                    columnNumber: 25
+                                                                                }, this),
+                                                                                ");"
+                                                                            ]
+                                                                        }, void 0, true, {
+                                                                            fileName: "[project]/components/sections/Timeline.tsx",
+                                                                            lineNumber: 464,
+                                                                            columnNumber: 23
+                                                                        }, this)
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                    lineNumber: 459,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "timeline__code-line",
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            className: "timeline__code-number",
+                                                                            children: "03"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/components/sections/Timeline.tsx",
+                                                                            lineNumber: 478,
+                                                                            columnNumber: 23
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            className: "timeline__code-content",
+                                                                            children: [
+                                                                                "book.",
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                    className: "timeline__code-function",
+                                                                                    children: "open"
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                                    lineNumber: 484,
+                                                                                    columnNumber: 25
+                                                                                }, this),
+                                                                                "(",
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                    className: "timeline__code-string",
+                                                                                    children: '"Off Campus"'
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                                    lineNumber: 488,
+                                                                                    columnNumber: 25
+                                                                                }, this),
+                                                                                ");"
+                                                                            ]
+                                                                        }, void 0, true, {
+                                                                            fileName: "[project]/components/sections/Timeline.tsx",
+                                                                            lineNumber: 482,
+                                                                            columnNumber: 23
+                                                                        }, this)
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                    lineNumber: 477,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "timeline__code-line",
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            className: "timeline__code-number",
+                                                                            children: "04"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/components/sections/Timeline.tsx",
+                                                                            lineNumber: 496,
+                                                                            columnNumber: 23
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            className: "timeline__code-content",
+                                                                            children: [
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                    className: "timeline__code-keyword",
+                                                                                    children: "if"
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                                    lineNumber: 501,
+                                                                                    columnNumber: 25
+                                                                                }, this),
+                                                                                " ",
+                                                                                "(fear",
+                                                                                " ",
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                    className: "timeline__code-operator",
+                                                                                    children: ">"
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                                    lineNumber: 505,
+                                                                                    columnNumber: 25
+                                                                                }, this),
+                                                                                " ",
+                                                                                "faith) ",
+                                                                                "{"
+                                                                            ]
+                                                                        }, void 0, true, {
+                                                                            fileName: "[project]/components/sections/Timeline.tsx",
+                                                                            lineNumber: 500,
+                                                                            columnNumber: 23
+                                                                        }, this)
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                    lineNumber: 495,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "timeline__code-line",
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            className: "timeline__code-number",
+                                                                            children: "05"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/components/sections/Timeline.tsx",
+                                                                            lineNumber: 513,
+                                                                            columnNumber: 23
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            className: "timeline__code-content",
+                                                                            children: [
+                                                                                "  ",
+                                                                                "remember(",
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                    className: "timeline__code-string",
+                                                                                    children: '"grace"'
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                                    lineNumber: 519,
+                                                                                    columnNumber: 25
+                                                                                }, this),
+                                                                                ");"
+                                                                            ]
+                                                                        }, void 0, true, {
+                                                                            fileName: "[project]/components/sections/Timeline.tsx",
+                                                                            lineNumber: 517,
+                                                                            columnNumber: 23
+                                                                        }, this)
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                    lineNumber: 512,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "timeline__code-line",
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            className: "timeline__code-number",
+                                                                            children: "06"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/components/sections/Timeline.tsx",
+                                                                            lineNumber: 527,
+                                                                            columnNumber: 23
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            className: "timeline__code-content",
+                                                                            children: "}"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/components/sections/Timeline.tsx",
+                                                                            lineNumber: 531,
+                                                                            columnNumber: 23
+                                                                        }, this)
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/components/sections/Timeline.tsx",
+                                                                    lineNumber: 526,
+                                                                    columnNumber: 21
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/components/sections/Timeline.tsx",
+                                                            lineNumber: 441,
+                                                            columnNumber: 19
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/sections/Timeline.tsx",
+                                                        lineNumber: 440,
+                                                        columnNumber: 17
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/components/sections/Timeline.tsx",
+                                                lineNumber: 426,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "timeline__book-note timeline__book-note--right",
+                                                children: "another chapter, another plot twist."
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/sections/Timeline.tsx",
+                                                lineNumber: 539,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "timeline__book-mini-note",
+                                                children: "next trip: loading..."
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/sections/Timeline.tsx",
+                                                lineNumber: 543,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
+                                                className: "timeline__book-footer",
+                                                children: "blue heart, always"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/sections/Timeline.tsx",
+                                                lineNumber: 547,
+                                                columnNumber: 15
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/sections/Timeline.tsx",
+                                        lineNumber: 408,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/sections/Timeline.tsx",
+                                lineNumber: 260,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "timeline__book-bookmark",
+                                "aria-hidden": "true"
+                            }, void 0, false, {
+                                fileName: "[project]/components/sections/Timeline.tsx",
+                                lineNumber: 553,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "timeline__book-star",
+                                "aria-hidden": "true",
+                                children: "✦"
+                            }, void 0, false, {
+                                fileName: "[project]/components/sections/Timeline.tsx",
+                                lineNumber: 558,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/sections/Timeline.tsx",
+                        lineNumber: 246,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
                 fileName: "[project]/components/sections/Timeline.tsx",
-                lineNumber: 123,
+                lineNumber: 240,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1191,12 +2051,12 @@ function Timeline() {
                                     className: "timeline-progress__fill"
                                 }, void 0, false, {
                                     fileName: "[project]/components/sections/Timeline.tsx",
-                                    lineNumber: 132,
+                                    lineNumber: 573,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/sections/Timeline.tsx",
-                                lineNumber: 131,
+                                lineNumber: 572,
                                 columnNumber: 11
                             }, this),
                             __TURBOPACK__imported__module__$5b$project$5d2f$data$2f$timeline$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["timelineItems"].map((item, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1204,13 +2064,13 @@ function Timeline() {
                                     children: String(index + 1).padStart(2, "0")
                                 }, item.title, false, {
                                     fileName: "[project]/components/sections/Timeline.tsx",
-                                    lineNumber: 135,
+                                    lineNumber: 577,
                                     columnNumber: 13
                                 }, this))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/sections/Timeline.tsx",
-                        lineNumber: 130,
+                        lineNumber: 568,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1225,34 +2085,34 @@ function Timeline() {
                                                 children: item.kicker
                                             }, void 0, false, {
                                                 fileName: "[project]/components/sections/Timeline.tsx",
-                                                lineNumber: 145,
+                                                lineNumber: 593,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                                 children: item.year
                                             }, void 0, false, {
                                                 fileName: "[project]/components/sections/Timeline.tsx",
-                                                lineNumber: 146,
+                                                lineNumber: 594,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/sections/Timeline.tsx",
-                                        lineNumber: 144,
+                                        lineNumber: 592,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                         children: item.title
                                     }, void 0, false, {
                                         fileName: "[project]/components/sections/Timeline.tsx",
-                                        lineNumber: 148,
+                                        lineNumber: 597,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: item.description
                                     }, void 0, false, {
                                         fileName: "[project]/components/sections/Timeline.tsx",
-                                        lineNumber: 149,
+                                        lineNumber: 599,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1260,18 +2120,18 @@ function Timeline() {
                                         children: String(index + 1).padStart(2, "0")
                                     }, void 0, false, {
                                         fileName: "[project]/components/sections/Timeline.tsx",
-                                        lineNumber: 150,
+                                        lineNumber: 601,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, item.title, true, {
                                 fileName: "[project]/components/sections/Timeline.tsx",
-                                lineNumber: 143,
+                                lineNumber: 588,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/components/sections/Timeline.tsx",
-                        lineNumber: 141,
+                        lineNumber: 586,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1285,52 +2145,52 @@ function Timeline() {
                                         children: "LEARNING"
                                     }, void 0, false, {
                                         fileName: "[project]/components/sections/Timeline.tsx",
-                                        lineNumber: 157,
+                                        lineNumber: 613,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                         children: "→"
                                     }, void 0, false, {
                                         fileName: "[project]/components/sections/Timeline.tsx",
-                                        lineNumber: 158,
+                                        lineNumber: 614,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: "BUILDING"
                                     }, void 0, false, {
                                         fileName: "[project]/components/sections/Timeline.tsx",
-                                        lineNumber: 159,
+                                        lineNumber: 615,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/sections/Timeline.tsx",
-                                lineNumber: 156,
+                                lineNumber: 612,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 children: "scroll para acompanhar a progressão"
                             }, void 0, false, {
                                 fileName: "[project]/components/sections/Timeline.tsx",
-                                lineNumber: 161,
+                                lineNumber: 618,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/sections/Timeline.tsx",
-                        lineNumber: 155,
+                        lineNumber: 608,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/sections/Timeline.tsx",
-                lineNumber: 129,
+                lineNumber: 567,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/sections/Timeline.tsx",
-        lineNumber: 122,
+        lineNumber: 235,
         columnNumber: 5
     }, this);
 }

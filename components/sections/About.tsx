@@ -21,9 +21,7 @@ export function About() {
 
       <div className="about__content">
         <SectionHeading
-          title="Eu, além
-do código."
-        />
+          title="Eu, além do código." />
 
         <div className="about__copy">
           <p>
