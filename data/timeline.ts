@@ -7,45 +7,45 @@ export type TimelineItem = {
 
 export const timelineItems: TimelineItem[] = [
   {
-    year: "Formação",
-    kicker: "Base técnica",
+    year: "2019",
+    kicker: "Formação",
+    title: "Conclusão do ensino médio",
+    description:
+      "Concluí o ensino médio e comecei a buscar uma área que combinasse raciocínio, criatividade e a possibilidade de construir soluções.",
+  },
+  {
+    year: "2021",
+    kicker: "Primeiros caminhos",
+    title: "Da Física à programação",
+    description:
+      "Ingressei no bacharelado em Física na UFMG. Durante o curso, tive meu primeiro contato com programação por meio de uma disciplina e percebi que era nesse universo que eu queria construir minha carreira.",
+  },
+  {
+    year: "2022 — 2026",
+    kicker: "Formação técnica",
     title: "Engenharia de Software",
     description:
-      "Formação que consolidou fundamentos de lógica, arquitetura, desenvolvimento e construção de produtos digitais.",
+      "Redirecionei minha trajetória e iniciei Engenharia de Software no Unileste com bolsa integral pelo ProUni, construindo uma base sólida em lógica, arquitetura, desenvolvimento e produtos digitais.",
   },
   {
-    year: "Fev. 2025",
+    year: "2022 — 2023",
     kicker: "Primeira experiência",
-    title: "Entrada na Tunni",
+    title: "Suporte na Automatec",
     description:
-      "Início da atuação profissional como estagiária de desenvolvimento front-end, conectando estudo e projetos reais.",
+      "Conquistei minha primeira experiência profissional em tecnologia, atuando por seis meses com suporte. Em 2023, encerrei esse ciclo para me dedicar ao desenvolvimento como programadora.",
   },
   {
-    year: "2025–2026",
-    kicker: "Evolução prática",
-    title: "Interfaces em produção",
+    year: "2025 — 2026",
+    kicker: "Experiência prática",
+    title: "Front-end na Tunni",
     description:
-      "Participação no desenvolvimento e refinamento de páginas, componentes e experiências digitais responsivas.",
-  },
-  {
-    year: "Fev. 2026",
-    kicker: "Fim de ciclo",
-    title: "Conclusão da etapa na Tunni",
-    description:
-      "Encerramento de uma fase importante, levando repertório técnico, visão de produto e mais autonomia profissional.",
-  },
-  {
-    year: "2026",
-    kicker: "Novo capítulo",
-    title: "Atuação como freelancer",
-    description:
-      "Desenvolvimento de projetos front-end para clientes, com atenção à funcionalidade, responsividade e qualidade visual.",
+      "Atuei durante um ano como estagiária em desenvolvimento front-end, transformando layouts em interfaces funcionais, responsivas e alinhadas às necessidades de cada projeto.",
   },
   {
     year: "Agora",
-    kicker: "Próximo passo",
-    title: "Construindo uma carreira sólida",
+    kicker: "Próximo capítulo",
+    title: "Construindo o que vem a seguir",
     description:
-      "Evolução técnica contínua e abertura para projetos, colaborações e oportunidades em desenvolvimento front-end.",
+      "Continuo aprofundando meus conhecimentos e trabalhando em projetos reais. Estou aberta a oportunidades em front-end, novos desafios profissionais e projetos freelancer.",
   },
 ];

@@ -858,40 +858,40 @@ __turbopack_context__.s([
 ]);
 const timelineItems = [
     {
-        year: "Formação",
-        kicker: "Base técnica",
+        year: "2019",
+        kicker: "Formação",
+        title: "Conclusão do ensino médio",
+        description: "Concluí o ensino médio e comecei a buscar uma área que combinasse raciocínio, criatividade e a possibilidade de construir soluções."
+    },
+    {
+        year: "2021",
+        kicker: "Primeiros caminhos",
+        title: "Da Física à programação",
+        description: "Ingressei no bacharelado em Física na UFMG. Durante o curso, tive meu primeiro contato com programação por meio de uma disciplina e percebi que era nesse universo que eu queria construir minha carreira."
+    },
+    {
+        year: "2022 — 2026",
+        kicker: "Formação técnica",
         title: "Engenharia de Software",
-        description: "Formação que consolidou fundamentos de lógica, arquitetura, desenvolvimento e construção de produtos digitais."
+        description: "Redirecionei minha trajetória e iniciei Engenharia de Software no Unileste com bolsa integral pelo ProUni, construindo uma base sólida em lógica, arquitetura, desenvolvimento e produtos digitais."
     },
     {
-        year: "Fev. 2025",
+        year: "2022 — 2023",
         kicker: "Primeira experiência",
-        title: "Entrada na Tunni",
-        description: "Início da atuação profissional como estagiária de desenvolvimento front-end, conectando estudo e projetos reais."
+        title: "Suporte na Automatec",
+        description: "Conquistei minha primeira experiência profissional em tecnologia, atuando por seis meses com suporte. Em 2023, encerrei esse ciclo para me dedicar ao desenvolvimento como programadora."
     },
     {
-        year: "2025–2026",
-        kicker: "Evolução prática",
-        title: "Interfaces em produção",
-        description: "Participação no desenvolvimento e refinamento de páginas, componentes e experiências digitais responsivas."
-    },
-    {
-        year: "Fev. 2026",
-        kicker: "Fim de ciclo",
-        title: "Conclusão da etapa na Tunni",
-        description: "Encerramento de uma fase importante, levando repertório técnico, visão de produto e mais autonomia profissional."
-    },
-    {
-        year: "2026",
-        kicker: "Novo capítulo",
-        title: "Atuação como freelancer",
-        description: "Desenvolvimento de projetos front-end para clientes, com atenção à funcionalidade, responsividade e qualidade visual."
+        year: "2025 — 2026",
+        kicker: "Experiência prática",
+        title: "Front-end na Tunni",
+        description: "Atuei durante um ano como estagiária em desenvolvimento front-end, transformando layouts em interfaces funcionais, responsivas e alinhadas às necessidades de cada projeto."
     },
     {
         year: "Agora",
-        kicker: "Próximo passo",
-        title: "Construindo uma carreira sólida",
-        description: "Evolução técnica contínua e abertura para projetos, colaborações e oportunidades em desenvolvimento front-end."
+        kicker: "Próximo capítulo",
+        title: "Construindo o que vem a seguir",
+        description: "Continuo aprofundando meus conhecimentos e trabalhando em projetos reais. Estou aberta a oportunidades em front-end, novos desafios profissionais e projetos freelancer."
     }
 ];
 }),
@@ -2169,48 +2169,24 @@ function Skills() {
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useGSAP"])(()=>{
         const mm = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].matchMedia();
         mm.add("(min-width: 1024px) and (prefers-reduced-motion: no-preference)", ()=>{
-            const section = root.current;
-            const track = section?.querySelector(".skills__track");
-            if (!section || !track) {
-                return;
-            }
-            const getHorizontalDistance = ()=>{
-                return Math.max(0, track.scrollWidth - document.documentElement.clientWidth);
-            };
-            /*
-           * Garante que a animação sempre comece em x: 0.
-           * Isso evita que o track mantenha um transform antigo
-           * depois de atualizar a página ou editar o código.
-           */ __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].set(track, {
-                x: 0
-            });
-            const horizontalAnimation = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].fromTo(track, {
-                x: 0
-            }, {
-                x: ()=>-getHorizontalDistance(),
+            const track = root.current?.querySelector(".skills__track");
+            if (!track) return;
+            const getDistance = ()=>Math.max(0, track.scrollWidth - window.innerWidth + 120);
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].to(track, {
+                x: ()=>-getDistance(),
                 ease: "none",
                 scrollTrigger: {
-                    trigger: section,
+                    trigger: root.current,
                     start: "top top",
-                    end: ()=>`+=${Math.max(getHorizontalDistance(), window.innerHeight)}`,
+                    end: ()=>`+=${getDistance() + 700}`,
                     pin: true,
-                    pinSpacing: true,
                     scrub: 0.85,
-                    anticipatePin: 1,
-                    invalidateOnRefresh: true
+                    invalidateOnRefresh: true,
+                    anticipatePin: 1
                 }
             });
-            return ()=>{
-                horizontalAnimation.scrollTrigger?.kill();
-                horizontalAnimation.kill();
-                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].set(track, {
-                    clearProps: "transform"
-                });
-            };
         });
-        return ()=>{
-            mm.revert();
-        };
+        return ()=>mm.revert();
     }, {
         scope: root
     });
@@ -2222,18 +2198,17 @@ function Skills() {
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "skills__header",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$SectionHeading$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SectionHeading"], {
-                    eyebrow: "Ferramentas / 04",
-                    title: "Tecnologia é ferramenta. O cuidado está em como ela é usada.",
-                    description: "Uma stack direcionada à construção de interfaces modernas, responsivas e fáceis de evoluir.",
+                    title: "Ferramentas que fazem parte do meu trabalho.",
+                    description: "Tecnologias que utilizo para transformar layouts em interfaces funcionais.",
                     light: true
                 }, void 0, false, {
                     fileName: "[project]/components/sections/Skills.tsx",
-                    lineNumber: 106,
+                    lineNumber: 45,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/sections/Skills.tsx",
-                lineNumber: 105,
+                lineNumber: 44,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2251,35 +2226,34 @@ function Skills() {
                                                 children: skill.index
                                             }, void 0, false, {
                                                 fileName: "[project]/components/sections/Skills.tsx",
-                                                lineNumber: 122,
+                                                lineNumber: 57,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                "aria-hidden": "true",
                                                 children: "✦"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/sections/Skills.tsx",
-                                                lineNumber: 124,
+                                                lineNumber: 58,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/sections/Skills.tsx",
-                                        lineNumber: 121,
+                                        lineNumber: 56,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                         children: skill.name
                                     }, void 0, false, {
                                         fileName: "[project]/components/sections/Skills.tsx",
-                                        lineNumber: 129,
+                                        lineNumber: 60,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: skill.description
                                     }, void 0, false, {
                                         fileName: "[project]/components/sections/Skills.tsx",
-                                        lineNumber: 131,
+                                        lineNumber: 61,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2287,13 +2261,13 @@ function Skills() {
                                         children: skill.note
                                     }, void 0, false, {
                                         fileName: "[project]/components/sections/Skills.tsx",
-                                        lineNumber: 133,
+                                        lineNumber: 62,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, skill.name, true, {
                                 fileName: "[project]/components/sections/Skills.tsx",
-                                lineNumber: 117,
+                                lineNumber: 55,
                                 columnNumber: 13
                             }, this)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
@@ -2301,48 +2275,47 @@ function Skills() {
                             "aria-label": "Aprendizado contínuo",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    "aria-hidden": "true",
                                     children: "∞"
                                 }, void 0, false, {
                                     fileName: "[project]/components/sections/Skills.tsx",
-                                    lineNumber: 143,
+                                    lineNumber: 66,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                     children: "Em constante evolução."
                                 }, void 0, false, {
                                     fileName: "[project]/components/sections/Skills.tsx",
-                                    lineNumber: 147,
+                                    lineNumber: 67,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     children: "A stack cresce, mas o compromisso com uma boa experiência permanece."
                                 }, void 0, false, {
                                     fileName: "[project]/components/sections/Skills.tsx",
-                                    lineNumber: 151,
+                                    lineNumber: 68,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/sections/Skills.tsx",
-                            lineNumber: 139,
+                            lineNumber: 65,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/sections/Skills.tsx",
-                    lineNumber: 115,
+                    lineNumber: 53,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/sections/Skills.tsx",
-                lineNumber: 114,
+                lineNumber: 52,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/sections/Skills.tsx",
-        lineNumber: 100,
+        lineNumber: 43,
         columnNumber: 5
     }, this);
 }

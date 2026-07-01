@@ -1,29 +1,20 @@
-{"timestamp":"00:00:00.555","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:00:01.310","source":"Browser","level":"WARN","message":"GSAP target [data-hero=topline] not found. https://gsap.com"}
-{"timestamp":"00:00:01.310","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
-{"timestamp":"00:00:03.084","source":"Browser","level":"WARN","message":"GSAP target [data-hero=topline] not found. https://gsap.com"}
-{"timestamp":"00:00:03.084","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
-{"timestamp":"00:00:03.094","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target [data-hero=topline] not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(components/sections/Hero.tsx:37:16)\\u001b[22m\""}
-{"timestamp":"00:00:03.094","source":"Browser","level":"WARN","message":"\u001b[33mGSAP target [data-hero=topline] not found. https://gsap.com\u001b[39m"}
-{"timestamp":"00:00:03.096","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(components/sections/Hero.tsx:37:16)\\u001b[22m\""}
-{"timestamp":"00:00:03.096","source":"Browser","level":"WARN","message":"\u001b[33mGSAP target  not found. https://gsap.com\u001b[39m"}
-{"timestamp":"00:05:06.507","source":"Server","level":"LOG","message":"✓ Compiled in 53ms"}
-{"timestamp":"00:05:22.969","source":"Server","level":"LOG","message":"✓ Compiled in 28ms"}
-{"timestamp":"00:05:28.801","source":"Server","level":"LOG","message":"✓ Compiled in 26ms"}
-{"timestamp":"00:13:47.010","source":"Server","level":"LOG","message":"✓ Compiled in 103ms"}
-{"timestamp":"00:13:47.218","source":"Browser","level":"ERROR","message":"./components/sections/Timeline.tsx:434:10\nExpected '</', got 'ident'\n  432 | </article>\n  433 |\n> 434 | <article className=\"timeline__book-page timeline__book-page--right\">\n      |          ^^^^^^^^^\n  435 |   <span className=\"timeline__book-page-number\">\n  436 |     02\n  437 |   </span>\n\nParsing ecmascript source code failed\n\nImport trace:\n  Server Component:\n    ./components/sections/Timeline.tsx\n    ./app/page.tsx"}
-{"timestamp":"00:14:07.701","source":"Browser","level":"ERROR","message":"./components/sections/Timeline.tsx:434:10\nExpected '</', got 'ident'\n  432 | </article>\n  433 |\n> 434 | <article className=\"timeline__book-page timeline__book-page--right\">\n      |          ^^^^^^^^^\n  435 |   <span className=\"timeline__book-page-number\">\n  436 |     02\n  437 |   </span>\n\nParsing ecmascript source code failed\n\nImport trace:\n  Server Component:\n    ./components/sections/Timeline.tsx\n    ./app/page.tsx"}
-{"timestamp":"00:14:08.870","source":"Browser","level":"ERROR","message":"./components/sections/Timeline.tsx:434:10\nExpected '</', got 'ident'\n  432 | </article>\n  433 |\n> 434 | <article className=\"timeline__book-page timeline__book-page--right\">\n      |          ^^^^^^^^^\n  435 |   <span className=\"timeline__book-page-number\">\n  436 |     02\n  437 |   </span>\n\nParsing ecmascript source code failed\n\nImport trace:\n  Server Component:\n    ./components/sections/Timeline.tsx\n    ./app/page.tsx"}
-{"timestamp":"00:32:03.799","source":"Server","level":"LOG","message":"✓ Compiled in 50ms"}
-{"timestamp":"00:32:29.639","source":"Server","level":"ERROR","message":"[browser] \"./components/sections/Timeline.tsx:434:10\\nExpected '</', got 'ident'\\n  432 | </article>\\n  433 |\\n> 434 | <article className=\\\"timeline__book-page timeline__book-page--right\\\">\\n      |          ^^^^^^^^^\\n  435 |   <span className=\\\"timeline__book-page-number\\\">\\n  436 |     02\\n  437 |   </span>\\n\\nParsing ecmascript source code failed\\n\\nImport trace:\\n  Server Component:\\n    ./components/sections/Timeline.tsx\\n    ./app/page.tsx\" \"\""}
-{"timestamp":"00:32:29.640","source":"Browser","level":"ERROR","message":"./components/sections/Timeline.tsx:434:10\nExpected '</', got 'ident'\n  432 | </article>\n  433 |\n> 434 | <article className=\"timeline__book-page timeline__book-page--right\">\n      |          ^^^^^^^^^\n  435 |   <span className=\"timeline__book-page-number\">\n  436 |     02\n  437 |   </span>\n\nParsing ecmascript source code failed\n\nImport trace:\n  Server Component:\n    ./components/sections/Timeline.tsx\n    ./app/page.tsx \"\""}
-{"timestamp":"00:32:29.640","source":"Server","level":"ERROR","message":"[browser] \"./components/sections/Timeline.tsx:434:10\\nExpected '</', got 'ident'\\n  432 | </article>\\n  433 |\\n> 434 | <article className=\\\"timeline__book-page timeline__book-page--right\\\">\\n      |          ^^^^^^^^^\\n  435 |   <span className=\\\"timeline__book-page-number\\\">\\n  436 |     02\\n  437 |   </span>\\n\\nParsing ecmascript source code failed\\n\\nImport trace:\\n  Server Component:\\n    ./components/sections/Timeline.tsx\\n    ./app/page.tsx\" \"\""}
-{"timestamp":"00:32:29.640","source":"Browser","level":"ERROR","message":"./components/sections/Timeline.tsx:434:10\nExpected '</', got 'ident'\n  432 | </article>\n  433 |\n> 434 | <article className=\"timeline__book-page timeline__book-page--right\">\n      |          ^^^^^^^^^\n  435 |   <span className=\"timeline__book-page-number\">\n  436 |     02\n  437 |   </span>\n\nParsing ecmascript source code failed\n\nImport trace:\n  Server Component:\n    ./components/sections/Timeline.tsx\n    ./app/page.tsx \"\""}
-{"timestamp":"00:32:29.640","source":"Server","level":"ERROR","message":"[browser] \"./components/sections/Timeline.tsx:434:10\\nExpected '</', got 'ident'\\n  432 | </article>\\n  433 |\\n> 434 | <article className=\\\"timeline__book-page timeline__book-page--right\\\">\\n      |          ^^^^^^^^^\\n  435 |   <span className=\\\"timeline__book-page-number\\\">\\n  436 |     02\\n  437 |   </span>\\n\\nParsing ecmascript source code failed\\n\\nImport trace:\\n  Server Component:\\n    ./components/sections/Timeline.tsx\\n    ./app/page.tsx\" \"\""}
-{"timestamp":"00:32:29.640","source":"Browser","level":"ERROR","message":"./components/sections/Timeline.tsx:434:10\nExpected '</', got 'ident'\n  432 | </article>\n  433 |\n> 434 | <article className=\"timeline__book-page timeline__book-page--right\">\n      |          ^^^^^^^^^\n  435 |   <span className=\"timeline__book-page-number\">\n  436 |     02\n  437 |   </span>\n\nParsing ecmascript source code failed\n\nImport trace:\n  Server Component:\n    ./components/sections/Timeline.tsx\n    ./app/page.tsx \"\""}
-{"timestamp":"00:43:38.198","source":"Server","level":"LOG","message":"✓ Compiled in 67ms"}
-{"timestamp":"00:43:48.372","source":"Server","level":"LOG","message":"✓ Compiled in 31ms"}
-{"timestamp":"00:46:47.968","source":"Server","level":"LOG","message":"✓ Compiled in 35ms"}
-{"timestamp":"00:55:20.018","source":"Server","level":"LOG","message":"✓ Compiled in 89ms"}
-{"timestamp":"00:55:37.332","source":"Server","level":"LOG","message":"✓ Compiled in 29ms"}
-{"timestamp":"00:57:21.010","source":"Server","level":"LOG","message":"✓ Compiled in 37ms"}
+{"timestamp":"00:00:00.449","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:00.470","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target [data-hero=topline] not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(components/sections/Hero.tsx:37:16)\\u001b[22m\""}
+{"timestamp":"00:00:00.470","source":"Browser","level":"WARN","message":"\u001b[33mGSAP target [data-hero=topline] not found. https://gsap.com\u001b[39m"}
+{"timestamp":"00:00:00.559","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(components/sections/Hero.tsx:37:16)\\u001b[22m\""}
+{"timestamp":"00:00:00.559","source":"Browser","level":"WARN","message":"\u001b[33mGSAP target  not found. https://gsap.com\u001b[39m"}
+{"timestamp":"00:00:01.344","source":"Browser","level":"WARN","message":"GSAP target [data-hero=topline] not found. https://gsap.com"}
+{"timestamp":"00:00:01.344","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:00:03.569","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target [data-hero=topline] not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(components/sections/Hero.tsx:37:16)\\u001b[22m\""}
+{"timestamp":"00:00:03.569","source":"Browser","level":"WARN","message":"\u001b[33mGSAP target [data-hero=topline] not found. https://gsap.com\u001b[39m"}
+{"timestamp":"00:00:03.570","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(components/sections/Hero.tsx:37:16)\\u001b[22m\""}
+{"timestamp":"00:00:03.570","source":"Browser","level":"WARN","message":"\u001b[33mGSAP target  not found. https://gsap.com\u001b[39m"}
+{"timestamp":"00:00:03.570","source":"Browser","level":"WARN","message":"GSAP target [data-hero=topline] not found. https://gsap.com"}
+{"timestamp":"00:00:03.571","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:19:18.714","source":"Server","level":"LOG","message":"✓ Compiled in 201ms"}
+{"timestamp":"00:20:10.553","source":"Server","level":"LOG","message":"✓ Compiled in 50ms"}
+{"timestamp":"00:20:59.815","source":"Server","level":"LOG","message":"✓ Compiled in 82ms"}
+{"timestamp":"00:21:16.645","source":"Server","level":"LOG","message":"✓ Compiled in 47ms"}
+{"timestamp":"00:21:30.131","source":"Server","level":"LOG","message":"✓ Compiled in 40ms"}
+{"timestamp":"00:21:45.010","source":"Server","level":"LOG","message":"✓ Compiled in 79ms"}
+{"timestamp":"00:21:49.346","source":"Server","level":"LOG","message":"✓ Compiled in 53ms"}
