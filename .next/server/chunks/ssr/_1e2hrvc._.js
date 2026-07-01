@@ -1,3 +1,0 @@
-module.exports=[90798,a=>{"use strict";a.s(["withBasePath",0,function(a){return!a.startsWith("/")||a.startsWith("//")?a:`/mayza-portfolio${a}`}])},33290,a=>{"use strict";var b=a.i(7997),c=a.i(90798);let d={"--paper-texture":`url("${(0,c.withBasePath)("/textures/paper.png")}")`,"--numeric-texture":`url("${(0,c.withBasePath)("/textures/numeric-grid.png")}")`};a.s(["default",0,function({children:a}){return(0,b.jsx)("html",{lang:"pt-BR",children:(0,b.jsx)("body",{style:d,children:a})})},"metadata",0,{title:"Mayza Ester — Front-end Developer",description:"Portfólio de Mayza Ester, engenheira de software e desenvolvedora front-end."}])},70864,a=>{a.n(a.i(33290))}];
-
-//# sourceMappingURL=_1e2hrvc._.js.map

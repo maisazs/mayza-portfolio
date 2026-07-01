@@ -16,7 +16,7 @@ import styles from "./Hero.module.css";
  *
  * Dê preferência a uma imagem PNG ou WebP com fundo transparente.
  */
-const HERO_IMAGE = "";
+const HERO_IMAGE = "/images/mayza-3-V2.png"
 
 export function Hero() {
   const root = useRef<HTMLElement>(null);
@@ -212,15 +212,6 @@ export function Hero() {
 
   return (
     <section ref={root} id="inicio" className={styles.hero}>
-      <div className={styles.topline} data-hero="topline">
-        <p className={styles.eyebrow}>
-          Engenheira de Software <span aria-hidden="true">✦</span> Front-end
-          Developer
-        </p>
-
-        <p className={styles.edition}>Portfolio / 2026</p>
-      </div>
-
       <h1
         className={styles.displayTitle}
         aria-label="Portfólio front-end de Mayza Ester"
@@ -240,13 +231,12 @@ export function Hero() {
 
       <div className={styles.composition}>
         <aside className={styles.identity} data-hero="copy">
-          <span className={styles.microIndex}>01 / Apresentação</span>
 
           <h2>Mayza Ester</h2>
 
           <p>
             Desenvolvo interfaces responsivas que aproximam pessoas, ideias e
-            produtos — com clareza, cuidado e personalidade.
+            produtos com clareza, cuidado e personalidade.
           </p>
 
           <a
@@ -338,14 +328,6 @@ export function Hero() {
               data-depth="1.5"
               data-hero="decor"
             />
-
-            <span
-              className={styles.verticalLabel}
-              data-depth="0.9"
-              aria-hidden="true"
-            >
-              MAYZA / FRONT-END / 2026
-            </span>
           </div>
         </div>
 
@@ -373,14 +355,6 @@ export function Hero() {
           <a className="button button--ghost" href="#contato">
             Falar comigo <span aria-hidden="true">✦</span>
           </a>
-        </div>
-
-        <div className={styles.pagination} aria-hidden="true">
-          <strong>01</strong>
-          <span>
-            <i />
-          </span>
-          <small>05</small>
         </div>
       </div>
     </section>
