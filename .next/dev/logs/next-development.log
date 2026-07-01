@@ -1,20 +1,13 @@
-{"timestamp":"00:00:00.449","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:00:00.470","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target [data-hero=topline] not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(components/sections/Hero.tsx:37:16)\\u001b[22m\""}
-{"timestamp":"00:00:00.470","source":"Browser","level":"WARN","message":"\u001b[33mGSAP target [data-hero=topline] not found. https://gsap.com\u001b[39m"}
-{"timestamp":"00:00:00.559","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(components/sections/Hero.tsx:37:16)\\u001b[22m\""}
-{"timestamp":"00:00:00.559","source":"Browser","level":"WARN","message":"\u001b[33mGSAP target  not found. https://gsap.com\u001b[39m"}
-{"timestamp":"00:00:01.344","source":"Browser","level":"WARN","message":"GSAP target [data-hero=topline] not found. https://gsap.com"}
-{"timestamp":"00:00:01.344","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
-{"timestamp":"00:00:03.569","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target [data-hero=topline] not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(components/sections/Hero.tsx:37:16)\\u001b[22m\""}
-{"timestamp":"00:00:03.569","source":"Browser","level":"WARN","message":"\u001b[33mGSAP target [data-hero=topline] not found. https://gsap.com\u001b[39m"}
-{"timestamp":"00:00:03.570","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(components/sections/Hero.tsx:37:16)\\u001b[22m\""}
-{"timestamp":"00:00:03.570","source":"Browser","level":"WARN","message":"\u001b[33mGSAP target  not found. https://gsap.com\u001b[39m"}
-{"timestamp":"00:00:03.570","source":"Browser","level":"WARN","message":"GSAP target [data-hero=topline] not found. https://gsap.com"}
-{"timestamp":"00:00:03.571","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
-{"timestamp":"00:19:18.714","source":"Server","level":"LOG","message":"✓ Compiled in 201ms"}
-{"timestamp":"00:20:10.553","source":"Server","level":"LOG","message":"✓ Compiled in 50ms"}
-{"timestamp":"00:20:59.815","source":"Server","level":"LOG","message":"✓ Compiled in 82ms"}
-{"timestamp":"00:21:16.645","source":"Server","level":"LOG","message":"✓ Compiled in 47ms"}
-{"timestamp":"00:21:30.131","source":"Server","level":"LOG","message":"✓ Compiled in 40ms"}
-{"timestamp":"00:21:45.010","source":"Server","level":"LOG","message":"✓ Compiled in 79ms"}
-{"timestamp":"00:21:49.346","source":"Server","level":"LOG","message":"✓ Compiled in 53ms"}
+{"timestamp":"00:00:00.562","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:10.522","source":"Browser","level":"WARN","message":"GSAP target [data-hero=topline] not found. https://gsap.com"}
+{"timestamp":"00:00:10.522","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:00:10.564","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target [data-hero=topline] not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(components/sections/Hero.tsx:37:16)\\u001b[22m\""}
+{"timestamp":"00:00:10.565","source":"Browser","level":"WARN","message":"\u001b[33mGSAP target [data-hero=topline] not found. https://gsap.com\u001b[39m"}
+{"timestamp":"00:00:10.571","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(components/sections/Hero.tsx:37:16)\\u001b[22m\""}
+{"timestamp":"00:00:10.571","source":"Browser","level":"WARN","message":"\u001b[33mGSAP target  not found. https://gsap.com\u001b[39m"}
+{"timestamp":"00:04:05.424","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target [data-hero=topline] not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(components/sections/Hero.tsx:37:16)\\u001b[22m\""}
+{"timestamp":"00:04:05.424","source":"Browser","level":"WARN","message":"\u001b[33mGSAP target [data-hero=topline] not found. https://gsap.com\u001b[39m"}
+{"timestamp":"00:04:05.425","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(components/sections/Hero.tsx:37:16)\\u001b[22m\""}
+{"timestamp":"00:04:05.425","source":"Browser","level":"WARN","message":"\u001b[33mGSAP target  not found. https://gsap.com\u001b[39m"}
+{"timestamp":"00:04:05.426","source":"Browser","level":"WARN","message":"GSAP target [data-hero=topline] not found. https://gsap.com"}
+{"timestamp":"00:04:05.426","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}

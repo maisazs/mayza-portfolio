@@ -1,5 +1,0 @@
-1:"$Sreact.fragment"
-2:I[39756,["/mayza-portfolio/_next/static/chunks/1d4h-sglyo8ft.js","/mayza-portfolio/_next/static/chunks/14mumt5_n0xhi.js"],"default"]
-3:I[37457,["/mayza-portfolio/_next/static/chunks/1d4h-sglyo8ft.js","/mayza-portfolio/_next/static/chunks/14mumt5_n0xhi.js"],"default"]
-4:[]
-0:{"rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"isPartial":false,"staleTime":300,"varyParams":"$W4","buildId":"qZt-5-C6x5X5fgLI1U9T7"}
