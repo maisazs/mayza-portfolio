@@ -1613,7 +1613,7 @@ button, summary, a {
   justify-self: center;
   max-width: calc(100% - 40px);
   margin-right: auto;
-  padding-top: 10vh;
+  padding-top: 9vh;
   padding-left: max(20px, 50vw - 720px);
   display: block;
   position: relative;
