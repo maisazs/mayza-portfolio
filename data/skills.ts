@@ -1,51 +1,86 @@
+export type SkillOrbit = "inner" | "middle" | "outer";
+
+export type SkillIconName =
+  | "react"
+  | "next"
+  | "typescript"
+  | "javascript"
+  | "tailwind"
+  | "html"
+  | "css"
+  | "gsap"
+  | "wordpress";
+
 export type Skill = {
-  index: string;
+  id: string;
   name: string;
-  description: string;
-  note: string;
+  icon: SkillIconName;
+  orbit: SkillOrbit;
+  angle: number;
 };
 
 export const skills: Skill[] = [
   {
-    index: "01",
+    id: "react",
+    name: "React",
+    icon: "react",
+    orbit: "inner",
+    angle: -90,
+  },
+  {
+    id: "next",
     name: "Next.js",
-    description: "Aplicações modernas, componentizadas e preparadas para crescer.",
-    note: "APP ROUTER / REACT",
+    icon: "next",
+    orbit: "inner",
+    angle: 30,
   },
   {
-    index: "02",
+    id: "typescript",
     name: "TypeScript",
-    description: "Código mais seguro, previsível e fácil de manter em equipe.",
-    note: "TYPES / DX",
+    icon: "typescript",
+    orbit: "inner",
+    angle: 150,
   },
   {
-    index: "03",
+    id: "javascript",
     name: "JavaScript",
-    description: "Interações, comportamento e lógica para experiências funcionais.",
-    note: "ESNEXT / DOM",
+    icon: "javascript",
+    orbit: "middle",
+    angle: -20,
   },
   {
-    index: "04",
+    id: "tailwind",
     name: "Tailwind CSS",
-    description: "Sistemas visuais consistentes com agilidade e responsividade.",
-    note: "UI / TOKENS",
+    icon: "tailwind",
+    orbit: "middle",
+    angle: 100,
   },
   {
-    index: "05",
-    name: "HTML + CSS",
-    description: "Estrutura semântica, acessível e visualmente bem resolvida.",
-    note: "SEMANTICS / A11Y",
-  },
-  {
-    index: "06",
+    id: "gsap",
     name: "GSAP",
-    description: "Movimento com intenção, ritmo e narrativa orientada pelo scroll.",
-    note: "MOTION / SCROLL",
+    icon: "gsap",
+    orbit: "middle",
+    angle: 220,
   },
   {
-    index: "07",
+    id: "html",
+    name: "HTML",
+    icon: "html",
+    orbit: "outer",
+    angle: 15,
+  },
+  {
+    id: "css",
+    name: "CSS",
+    icon: "css",
+    orbit: "outer",
+    angle: 135,
+  },
+  {
+    id: "wordpress",
     name: "WordPress",
-    description: "Páginas gerenciáveis e experiências digitais para negócios reais.",
-    note: "CMS / ELEMENTOR",
+    icon: "wordpress",
+    orbit: "outer",
+    angle: 255,
   },
 ];

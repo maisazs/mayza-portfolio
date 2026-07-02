@@ -2215,46 +2215,67 @@ __turbopack_context__.s([
 ]);
 const skills = [
     {
-        index: "01",
+        id: "react",
+        name: "React",
+        icon: "react",
+        orbit: "inner",
+        angle: -90
+    },
+    {
+        id: "next",
         name: "Next.js",
-        description: "Aplicações modernas, componentizadas e preparadas para crescer.",
-        note: "APP ROUTER / REACT"
+        icon: "next",
+        orbit: "inner",
+        angle: 30
     },
     {
-        index: "02",
+        id: "typescript",
         name: "TypeScript",
-        description: "Código mais seguro, previsível e fácil de manter em equipe.",
-        note: "TYPES / DX"
+        icon: "typescript",
+        orbit: "inner",
+        angle: 150
     },
     {
-        index: "03",
+        id: "javascript",
         name: "JavaScript",
-        description: "Interações, comportamento e lógica para experiências funcionais.",
-        note: "ESNEXT / DOM"
+        icon: "javascript",
+        orbit: "middle",
+        angle: -20
     },
     {
-        index: "04",
+        id: "tailwind",
         name: "Tailwind CSS",
-        description: "Sistemas visuais consistentes com agilidade e responsividade.",
-        note: "UI / TOKENS"
+        icon: "tailwind",
+        orbit: "middle",
+        angle: 100
     },
     {
-        index: "05",
-        name: "HTML + CSS",
-        description: "Estrutura semântica, acessível e visualmente bem resolvida.",
-        note: "SEMANTICS / A11Y"
-    },
-    {
-        index: "06",
+        id: "gsap",
         name: "GSAP",
-        description: "Movimento com intenção, ritmo e narrativa orientada pelo scroll.",
-        note: "MOTION / SCROLL"
+        icon: "gsap",
+        orbit: "middle",
+        angle: 220
     },
     {
-        index: "07",
+        id: "html",
+        name: "HTML",
+        icon: "html",
+        orbit: "outer",
+        angle: 15
+    },
+    {
+        id: "css",
+        name: "CSS",
+        icon: "css",
+        orbit: "outer",
+        angle: 135
+    },
+    {
+        id: "wordpress",
         name: "WordPress",
-        description: "Páginas gerenciáveis e experiências digitais para negócios reais.",
-        note: "CMS / ELEMENTOR"
+        icon: "wordpress",
+        orbit: "outer",
+        angle: 255
     }
 ];
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
@@ -2283,40 +2304,696 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+const ORBIT_ORDER = [
+    "inner",
+    "middle",
+    "outer"
+];
+function SkillIcon({ name }) {
+    const commonProps = {
+        viewBox: "0 0 64 64",
+        width: 36,
+        height: 36,
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        "aria-hidden": true
+    };
+    switch(name){
+        case "react":
+            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                ...commonProps,
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                        cx: "32",
+                        cy: "32",
+                        r: "4.5",
+                        fill: "#61DAFB"
+                    }, void 0, false, {
+                        fileName: "[project]/components/sections/Skills.tsx",
+                        lineNumber: 43,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ellipse", {
+                        cx: "32",
+                        cy: "32",
+                        rx: "25",
+                        ry: "9.5",
+                        stroke: "#61DAFB",
+                        strokeWidth: "2.8"
+                    }, void 0, false, {
+                        fileName: "[project]/components/sections/Skills.tsx",
+                        lineNumber: 44,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ellipse", {
+                        cx: "32",
+                        cy: "32",
+                        rx: "25",
+                        ry: "9.5",
+                        stroke: "#61DAFB",
+                        strokeWidth: "2.8",
+                        transform: "rotate(60 32 32)"
+                    }, void 0, false, {
+                        fileName: "[project]/components/sections/Skills.tsx",
+                        lineNumber: 52,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ellipse", {
+                        cx: "32",
+                        cy: "32",
+                        rx: "25",
+                        ry: "9.5",
+                        stroke: "#61DAFB",
+                        strokeWidth: "2.8",
+                        transform: "rotate(120 32 32)"
+                    }, void 0, false, {
+                        fileName: "[project]/components/sections/Skills.tsx",
+                        lineNumber: 61,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/sections/Skills.tsx",
+                lineNumber: 42,
+                columnNumber: 9
+            }, this);
+        case "next":
+            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                ...commonProps,
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                        cx: "32",
+                        cy: "32",
+                        r: "25",
+                        fill: "#050505"
+                    }, void 0, false, {
+                        fileName: "[project]/components/sections/Skills.tsx",
+                        lineNumber: 76,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                        d: "M20 44V20l25 31",
+                        stroke: "#fffefd",
+                        strokeWidth: "3.2",
+                        strokeLinecap: "round",
+                        strokeLinejoin: "round"
+                    }, void 0, false, {
+                        fileName: "[project]/components/sections/Skills.tsx",
+                        lineNumber: 77,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                        d: "M43 20v17",
+                        stroke: "#fffefd",
+                        strokeWidth: "3.2",
+                        strokeLinecap: "round"
+                    }, void 0, false, {
+                        fileName: "[project]/components/sections/Skills.tsx",
+                        lineNumber: 84,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/sections/Skills.tsx",
+                lineNumber: 75,
+                columnNumber: 9
+            }, this);
+        case "typescript":
+            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                ...commonProps,
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                        x: "7",
+                        y: "7",
+                        width: "50",
+                        height: "50",
+                        rx: "7",
+                        fill: "#3178C6"
+                    }, void 0, false, {
+                        fileName: "[project]/components/sections/Skills.tsx",
+                        lineNumber: 96,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                        d: "M17 22h23M28.5 22v25",
+                        stroke: "#fffefd",
+                        strokeWidth: "3.2",
+                        strokeLinecap: "round"
+                    }, void 0, false, {
+                        fileName: "[project]/components/sections/Skills.tsx",
+                        lineNumber: 97,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                        d: "M43 30c-5-3-9-1.5-9 2 0 5 11 2.5 11 8 0 4-4 6-10 3",
+                        stroke: "#fffefd",
+                        strokeWidth: "3.2",
+                        strokeLinecap: "round",
+                        strokeLinejoin: "round"
+                    }, void 0, false, {
+                        fileName: "[project]/components/sections/Skills.tsx",
+                        lineNumber: 103,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/sections/Skills.tsx",
+                lineNumber: 95,
+                columnNumber: 9
+            }, this);
+        case "javascript":
+            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                ...commonProps,
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                        x: "7",
+                        y: "7",
+                        width: "50",
+                        height: "50",
+                        rx: "5",
+                        fill: "#F7DF1E"
+                    }, void 0, false, {
+                        fileName: "[project]/components/sections/Skills.tsx",
+                        lineNumber: 116,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                        d: "M29 21v23c0 5-3 7-7 7-3 0-5-1-7-3",
+                        stroke: "#050505",
+                        strokeWidth: "3",
+                        strokeLinecap: "round"
+                    }, void 0, false, {
+                        fileName: "[project]/components/sections/Skills.tsx",
+                        lineNumber: 117,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                        d: "M48 28c-3-3-9-3-9 1 0 5 11 3 11 9 0 5-6 7-12 3",
+                        stroke: "#050505",
+                        strokeWidth: "3",
+                        strokeLinecap: "round"
+                    }, void 0, false, {
+                        fileName: "[project]/components/sections/Skills.tsx",
+                        lineNumber: 123,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/sections/Skills.tsx",
+                lineNumber: 115,
+                columnNumber: 9
+            }, this);
+        case "tailwind":
+            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                ...commonProps,
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                        d: "M10 25c6-10 13-14 22-12 7 1 10 6 14 10 4 4 7 5 12 2-6 10-13 14-22 12-7-1-10-6-14-10-4-4-7-5-12-2Z",
+                        fill: "#06B6D4"
+                    }, void 0, false, {
+                        fileName: "[project]/components/sections/Skills.tsx",
+                        lineNumber: 135,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                        d: "M10 42c6-10 13-14 22-12 7 1 10 6 14 10 4 4 7 5 12 2-6 10-13 14-22 12-7-1-10-6-14-10-4-4-7-5-12-2Z",
+                        fill: "#06B6D4",
+                        opacity: "0.76"
+                    }, void 0, false, {
+                        fileName: "[project]/components/sections/Skills.tsx",
+                        lineNumber: 139,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/sections/Skills.tsx",
+                lineNumber: 134,
+                columnNumber: 9
+            }, this);
+        case "html":
+            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                ...commonProps,
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                        d: "M13 8h38l-4 44-15 4-15-4-4-44Z",
+                        fill: "#E34F26"
+                    }, void 0, false, {
+                        fileName: "[project]/components/sections/Skills.tsx",
+                        lineNumber: 150,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                        d: "M22 20h21l-1 8H24l1 8h16l-1 9-8 2-8-2-.5-5",
+                        stroke: "#fffefd",
+                        strokeWidth: "2.8",
+                        strokeLinecap: "round",
+                        strokeLinejoin: "round"
+                    }, void 0, false, {
+                        fileName: "[project]/components/sections/Skills.tsx",
+                        lineNumber: 151,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/sections/Skills.tsx",
+                lineNumber: 149,
+                columnNumber: 9
+            }, this);
+        case "css":
+            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                ...commonProps,
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                        d: "M13 8h38l-4 44-15 4-15-4-4-44Z",
+                        fill: "#1572B6"
+                    }, void 0, false, {
+                        fileName: "[project]/components/sections/Skills.tsx",
+                        lineNumber: 164,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                        d: "M22 20h21l-1 8H26l-1 7h16l-1 10-8 2-8-2-.5-5",
+                        stroke: "#fffefd",
+                        strokeWidth: "2.8",
+                        strokeLinecap: "round",
+                        strokeLinejoin: "round"
+                    }, void 0, false, {
+                        fileName: "[project]/components/sections/Skills.tsx",
+                        lineNumber: 165,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/sections/Skills.tsx",
+                lineNumber: 163,
+                columnNumber: 9
+            }, this);
+        case "gsap":
+            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                ...commonProps,
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                        d: "M12 18h40M12 32h31M12 46h23",
+                        stroke: "#88CE02",
+                        strokeWidth: "4",
+                        strokeLinecap: "round"
+                    }, void 0, false, {
+                        fileName: "[project]/components/sections/Skills.tsx",
+                        lineNumber: 178,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                        d: "m44 25 8 7-8 7",
+                        stroke: "#88CE02",
+                        strokeWidth: "4",
+                        strokeLinecap: "round",
+                        strokeLinejoin: "round"
+                    }, void 0, false, {
+                        fileName: "[project]/components/sections/Skills.tsx",
+                        lineNumber: 184,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/sections/Skills.tsx",
+                lineNumber: 177,
+                columnNumber: 9
+            }, this);
+        case "wordpress":
+            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                ...commonProps,
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                        cx: "32",
+                        cy: "32",
+                        r: "26",
+                        fill: "#21759B"
+                    }, void 0, false, {
+                        fileName: "[project]/components/sections/Skills.tsx",
+                        lineNumber: 197,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                        cx: "32",
+                        cy: "32",
+                        r: "20",
+                        stroke: "#fffefd",
+                        strokeWidth: "2.2"
+                    }, void 0, false, {
+                        fileName: "[project]/components/sections/Skills.tsx",
+                        lineNumber: 198,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                        d: "m18 22 10 25 6-16 7 16 7-23M16 22h14M37 22h10",
+                        stroke: "#fffefd",
+                        strokeWidth: "2.6",
+                        strokeLinecap: "round",
+                        strokeLinejoin: "round"
+                    }, void 0, false, {
+                        fileName: "[project]/components/sections/Skills.tsx",
+                        lineNumber: 205,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/sections/Skills.tsx",
+                lineNumber: 196,
+                columnNumber: 9
+            }, this);
+        default:
+            return null;
+    }
+}
+_c = SkillIcon;
 function Skills() {
     _s();
     const root = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useGSAP"])({
         "Skills.useGSAP": ()=>{
+            const section = root.current;
+            if (!section) {
+                return;
+            }
+            const orbitFrame = section.querySelector(".skills__orbit-frame");
+            const orbitElements = ORBIT_ORDER.map({
+                "Skills.useGSAP.orbitElements": (orbitName)=>section.querySelector(`[data-orbit="${orbitName}"]`)
+            }["Skills.useGSAP.orbitElements"]);
+            if (!orbitFrame || orbitElements.some({
+                "Skills.useGSAP": (orbit)=>!orbit
+            }["Skills.useGSAP"])) {
+                return;
+            }
+            const speedByOrbit = {
+                inner: 7.6,
+                middle: 5.2,
+                outer: 3.4
+            };
+            const directionByOrbit = {
+                inner: 1,
+                middle: -1,
+                outer: 1
+            };
+            const initialAngleByOrbit = {
+                inner: -14,
+                middle: 24,
+                outer: -32
+            };
+            const runtime = ORBIT_ORDER.map({
+                "Skills.useGSAP.runtime": (orbitName, index)=>{
+                    const element = orbitElements[index];
+                    const items = Array.from(element.querySelectorAll(".skills-orbit__item"));
+                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].set(items, {
+                        xPercent: -50,
+                        yPercent: -50,
+                        force3D: true
+                    });
+                    return {
+                        name: orbitName,
+                        element,
+                        items,
+                        radius: 0,
+                        angle: initialAngleByOrbit[orbitName],
+                        baseSpeed: speedByOrbit[orbitName],
+                        direction: directionByOrbit[orbitName],
+                        paused: false,
+                        setX: items.map({
+                            "Skills.useGSAP.runtime": (item)=>__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].quickSetter(item, "x", "px")
+                        }["Skills.useGSAP.runtime"]),
+                        setY: items.map({
+                            "Skills.useGSAP.runtime": (item)=>__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].quickSetter(item, "y", "px")
+                        }["Skills.useGSAP.runtime"])
+                    };
+                }
+            }["Skills.useGSAP.runtime"]);
+            const allItems = runtime.flatMap({
+                "Skills.useGSAP.allItems": (orbit)=>orbit.items
+            }["Skills.useGSAP.allItems"]);
+            const cleanupListeners = [];
+            let targetSpeed = 1;
+            let currentSpeed = 1;
+            let lastFrameWidth = 0;
+            const updateRadii = {
+                "Skills.useGSAP.updateRadii": ()=>{
+                    const currentFrameWidth = orbitFrame.clientWidth;
+                    if (currentFrameWidth === lastFrameWidth) {
+                        return;
+                    }
+                    lastFrameWidth = currentFrameWidth;
+                    runtime.forEach({
+                        "Skills.useGSAP.updateRadii": (orbit)=>{
+                            orbit.radius = orbit.element.getBoundingClientRect().width / 2;
+                        }
+                    }["Skills.useGSAP.updateRadii"]);
+                }
+            }["Skills.useGSAP.updateRadii"];
+            const renderOrbitPositions = {
+                "Skills.useGSAP.renderOrbitPositions": ()=>{
+                    runtime.forEach({
+                        "Skills.useGSAP.renderOrbitPositions": (orbit)=>{
+                            orbit.items.forEach({
+                                "Skills.useGSAP.renderOrbitPositions": (item, itemIndex)=>{
+                                    const offset = Number(item.dataset.angle ?? 0);
+                                    const angleInRadians = (orbit.angle + offset) * Math.PI / 180;
+                                    const x = Math.cos(angleInRadians) * orbit.radius;
+                                    const y = Math.sin(angleInRadians) * orbit.radius;
+                                    orbit.setX[itemIndex](x);
+                                    orbit.setY[itemIndex](y);
+                                    const horizontalDistance = Math.abs(x);
+                                    const verticalDistance = Math.abs(y);
+                                    if (horizontalDistance >= verticalDistance) {
+                                        item.dataset.labelPosition = x >= 0 ? "right" : "left";
+                                    } else {
+                                        item.dataset.labelPosition = y >= 0 ? "bottom" : "top";
+                                    }
+                                }
+                            }["Skills.useGSAP.renderOrbitPositions"]);
+                        }
+                    }["Skills.useGSAP.renderOrbitPositions"]);
+                }
+            }["Skills.useGSAP.renderOrbitPositions"];
+            const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            updateRadii();
+            renderOrbitPositions();
+            const ticker = {
+                "Skills.useGSAP.ticker": (_time, deltaTime)=>{
+                    const delta = Math.min(deltaTime / 1000, 0.05);
+                    updateRadii();
+                    targetSpeed += (1 - targetSpeed) * Math.min(1, delta * 2.7);
+                    currentSpeed += (targetSpeed - currentSpeed) * Math.min(1, delta * 7.5);
+                    runtime.forEach({
+                        "Skills.useGSAP.ticker": (orbit)=>{
+                            if (!orbit.paused) {
+                                orbit.angle += orbit.baseSpeed * orbit.direction * currentSpeed * delta;
+                            }
+                        }
+                    }["Skills.useGSAP.ticker"]);
+                    renderOrbitPositions();
+                }
+            }["Skills.useGSAP.ticker"];
+            if (!prefersReducedMotion) {
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].ticker.add(ticker);
+            }
+            runtime.forEach({
+                "Skills.useGSAP": (orbit)=>{
+                    orbit.items.forEach({
+                        "Skills.useGSAP": (item)=>{
+                            const pauseOrbit = {
+                                "Skills.useGSAP.pauseOrbit": ()=>{
+                                    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+                                        orbit.paused = true;
+                                    }
+                                }
+                            }["Skills.useGSAP.pauseOrbit"];
+                            const resumeOrbit = {
+                                "Skills.useGSAP.resumeOrbit": ()=>{
+                                    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+                                        orbit.paused = false;
+                                    }
+                                }
+                            }["Skills.useGSAP.resumeOrbit"];
+                            const pauseOnFocus = {
+                                "Skills.useGSAP.pauseOnFocus": ()=>{
+                                    orbit.paused = true;
+                                }
+                            }["Skills.useGSAP.pauseOnFocus"];
+                            const resumeOnBlur = {
+                                "Skills.useGSAP.resumeOnBlur": ()=>{
+                                    orbit.paused = false;
+                                    item.classList.remove("is-active");
+                                }
+                            }["Skills.useGSAP.resumeOnBlur"];
+                            const toggleOnTouch = {
+                                "Skills.useGSAP.toggleOnTouch": ()=>{
+                                    if (!window.matchMedia("(hover: none), (pointer: coarse)").matches) {
+                                        return;
+                                    }
+                                    const willActivate = !item.classList.contains("is-active");
+                                    allItems.forEach({
+                                        "Skills.useGSAP.toggleOnTouch": (otherItem)=>{
+                                            otherItem.classList.remove("is-active");
+                                        }
+                                    }["Skills.useGSAP.toggleOnTouch"]);
+                                    runtime.forEach({
+                                        "Skills.useGSAP.toggleOnTouch": (otherOrbit)=>{
+                                            otherOrbit.paused = false;
+                                        }
+                                    }["Skills.useGSAP.toggleOnTouch"]);
+                                    if (willActivate) {
+                                        item.classList.add("is-active");
+                                        orbit.paused = true;
+                                    }
+                                }
+                            }["Skills.useGSAP.toggleOnTouch"];
+                            item.addEventListener("pointerenter", pauseOrbit);
+                            item.addEventListener("pointerleave", resumeOrbit);
+                            item.addEventListener("focus", pauseOnFocus);
+                            item.addEventListener("blur", resumeOnBlur);
+                            item.addEventListener("click", toggleOnTouch);
+                            cleanupListeners.push({
+                                "Skills.useGSAP": ()=>{
+                                    item.removeEventListener("pointerenter", pauseOrbit);
+                                    item.removeEventListener("pointerleave", resumeOrbit);
+                                    item.removeEventListener("focus", pauseOnFocus);
+                                    item.removeEventListener("blur", resumeOnBlur);
+                                    item.removeEventListener("click", toggleOnTouch);
+                                }
+                            }["Skills.useGSAP"]);
+                        }
+                    }["Skills.useGSAP"]);
+                }
+            }["Skills.useGSAP"]);
+            const clearActiveItems = {
+                "Skills.useGSAP.clearActiveItems": (event)=>{
+                    const target = event.target;
+                    if (allItems.some({
+                        "Skills.useGSAP.clearActiveItems": (item)=>item.contains(target)
+                    }["Skills.useGSAP.clearActiveItems"])) {
+                        return;
+                    }
+                    allItems.forEach({
+                        "Skills.useGSAP.clearActiveItems": (item)=>{
+                            item.classList.remove("is-active");
+                        }
+                    }["Skills.useGSAP.clearActiveItems"]);
+                    runtime.forEach({
+                        "Skills.useGSAP.clearActiveItems": (orbit)=>{
+                            orbit.paused = false;
+                        }
+                    }["Skills.useGSAP.clearActiveItems"]);
+                }
+            }["Skills.useGSAP.clearActiveItems"];
+            document.addEventListener("pointerdown", clearActiveItems);
             const mm = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].matchMedia();
             mm.add("(min-width: 1024px) and (prefers-reduced-motion: no-preference)", {
                 "Skills.useGSAP": ()=>{
-                    const track = root.current?.querySelector(".skills__track");
-                    if (!track) return;
-                    const getDistance = {
-                        "Skills.useGSAP.getDistance": ()=>Math.max(0, track.scrollWidth - window.innerWidth + 120)
-                    }["Skills.useGSAP.getDistance"];
-                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].to(track, {
-                        x: {
-                            "Skills.useGSAP": ()=>-getDistance()
-                        }["Skills.useGSAP"],
-                        ease: "none",
+                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].set(orbitFrame, {
+                        scale: 0.58,
+                        y: 56,
+                        transformOrigin: "center center"
+                    });
+                    const pinnedTimeline = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].timeline({
                         scrollTrigger: {
-                            trigger: root.current,
+                            trigger: section,
                             start: "top top",
-                            end: {
-                                "Skills.useGSAP": ()=>`+=${getDistance() + 700}`
-                            }["Skills.useGSAP"],
+                            end: "+=2800",
                             pin: true,
+                            pinSpacing: true,
                             scrub: 0.85,
+                            anticipatePin: 1,
                             invalidateOnRefresh: true,
-                            anticipatePin: 1
+                            onUpdate: {
+                                "Skills.useGSAP.pinnedTimeline": (self)=>{
+                                    const velocity = Math.abs(self.getVelocity());
+                                    targetSpeed = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].utils.clamp(1, 6.2, 1 + velocity / 450);
+                                }
+                            }["Skills.useGSAP.pinnedTimeline"]
                         }
                     });
+                    pinnedTimeline.to(orbitFrame, {
+                        scale: 1,
+                        y: 0,
+                        ease: "none",
+                        duration: 0.62
+                    }, 0).fromTo(".skills__cloud--one", {
+                        x: -18,
+                        rotate: -5
+                    }, {
+                        x: 34,
+                        rotate: 3,
+                        ease: "none",
+                        duration: 1
+                    }, 0).fromTo(".skills__cloud--two", {
+                        x: 24,
+                        rotate: 4
+                    }, {
+                        x: -28,
+                        rotate: -3,
+                        ease: "none",
+                        duration: 1
+                    }, 0).fromTo(".skills__photo-sticker", {
+                        rotate: -8,
+                        y: 18
+                    }, {
+                        rotate: 3,
+                        y: -12,
+                        ease: "none",
+                        duration: 1
+                    }, 0);
+                    const entrance = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].timeline({
+                        scrollTrigger: {
+                            trigger: section,
+                            start: "top 76%",
+                            once: true
+                        }
+                    });
+                    entrance.from(".skills__header", {
+                        y: 30,
+                        autoAlpha: 0,
+                        duration: 0.75,
+                        ease: "power3.out"
+                    }).from(".skills__collage-piece", {
+                        scale: 0.7,
+                        rotate: -5,
+                        autoAlpha: 0,
+                        duration: 0.55,
+                        stagger: 0.06,
+                        ease: "back.out(1.5)"
+                    }, "-=0.4").from(".skills-orbit__item", {
+                        scale: 0.62,
+                        autoAlpha: 0,
+                        duration: 0.42,
+                        stagger: 0.04,
+                        ease: "back.out(1.4)"
+                    }, "-=0.42");
+                    return ({
+                        "Skills.useGSAP": ()=>{
+                            pinnedTimeline.kill();
+                            entrance.kill();
+                        }
+                    })["Skills.useGSAP"];
                 }
             }["Skills.useGSAP"]);
+            const handleResize = {
+                "Skills.useGSAP.handleResize": ()=>{
+                    lastFrameWidth = 0;
+                    updateRadii();
+                    renderOrbitPositions();
+                }
+            }["Skills.useGSAP.handleResize"];
+            window.addEventListener("resize", handleResize);
             return ({
-                "Skills.useGSAP": ()=>mm.revert()
+                "Skills.useGSAP": ()=>{
+                    mm.revert();
+                    if (!prefersReducedMotion) {
+                        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].ticker.remove(ticker);
+                    }
+                    cleanupListeners.forEach({
+                        "Skills.useGSAP": (cleanup)=>cleanup()
+                    }["Skills.useGSAP"]);
+                    document.removeEventListener("pointerdown", clearActiveItems);
+                    window.removeEventListener("resize", handleResize);
+                }
             })["Skills.useGSAP"];
         }
     }["Skills.useGSAP"], {
@@ -2326,128 +3003,275 @@ function Skills() {
         ref: root,
         id: "skills",
         className: "skills numeric-texture",
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "skills__header",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$SectionHeading$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SectionHeading"], {
-                    title: "Ferramentas que fazem parte do meu trabalho.",
-                    description: "Tecnologias que utilizo para transformar layouts em interfaces funcionais.",
-                    light: true
-                }, void 0, false, {
-                    fileName: "[project]/components/sections/Skills.tsx",
-                    lineNumber: 45,
-                    columnNumber: 9
-                }, this)
-            }, void 0, false, {
-                fileName: "[project]/components/sections/Skills.tsx",
-                lineNumber: 44,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "skills__viewport",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "skills__track",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "skills__layout",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "skills__header",
                     children: [
-                        __TURBOPACK__imported__module__$5b$project$5d2f$data$2f$skills$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["skills"].map((skill)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
-                                className: "skill-card",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "skill-card__top",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                children: skill.index
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/sections/Skills.tsx",
-                                                lineNumber: 57,
-                                                columnNumber: 17
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                children: "✦"
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/sections/Skills.tsx",
-                                                lineNumber: 58,
-                                                columnNumber: 17
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/components/sections/Skills.tsx",
-                                        lineNumber: 56,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        children: skill.name
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/sections/Skills.tsx",
-                                        lineNumber: 60,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        children: skill.description
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/sections/Skills.tsx",
-                                        lineNumber: 61,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "skill-card__note",
-                                        children: skill.note
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/sections/Skills.tsx",
-                                        lineNumber: 62,
-                                        columnNumber: 15
-                                    }, this)
-                                ]
-                            }, skill.name, true, {
-                                fileName: "[project]/components/sections/Skills.tsx",
-                                lineNumber: 55,
-                                columnNumber: 13
-                            }, this)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
-                            className: "skill-card skill-card--closing",
-                            "aria-label": "Aprendizado contínuo",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    children: "∞"
-                                }, void 0, false, {
-                                    fileName: "[project]/components/sections/Skills.tsx",
-                                    lineNumber: 66,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                    children: "Em constante evolução."
-                                }, void 0, false, {
-                                    fileName: "[project]/components/sections/Skills.tsx",
-                                    lineNumber: 67,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    children: "A stack cresce, mas o compromisso com uma boa experiência permanece."
-                                }, void 0, false, {
-                                    fileName: "[project]/components/sections/Skills.tsx",
-                                    lineNumber: 68,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$SectionHeading$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SectionHeading"], {
+                            title: "Tecnologias que fazem parte da minha stack.",
+                            description: "Ferramentas com as quais já trabalhei e continuo aprofundando meus conhecimentos no desenvolvimento front-end.",
+                            light: true
+                        }, void 0, false, {
                             fileName: "[project]/components/sections/Skills.tsx",
-                            lineNumber: 65,
+                            lineNumber: 668,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "skills__meta",
+                            "aria-hidden": "true"
+                        }, void 0, false, {
+                            fileName: "[project]/components/sections/Skills.tsx",
+                            lineNumber: 674,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/sections/Skills.tsx",
-                    lineNumber: 53,
+                    lineNumber: 667,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "skills__stage",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "skills__cloud skills__cloud--one skills__collage-piece",
+                            "aria-hidden": "true",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {}, void 0, false, {
+                                    fileName: "[project]/components/sections/Skills.tsx",
+                                    lineNumber: 683,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {}, void 0, false, {
+                                    fileName: "[project]/components/sections/Skills.tsx",
+                                    lineNumber: 684,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {}, void 0, false, {
+                                    fileName: "[project]/components/sections/Skills.tsx",
+                                    lineNumber: 685,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/sections/Skills.tsx",
+                            lineNumber: 679,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "skills__cloud skills__cloud--two skills__collage-piece",
+                            "aria-hidden": "true",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {}, void 0, false, {
+                                    fileName: "[project]/components/sections/Skills.tsx",
+                                    lineNumber: 692,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {}, void 0, false, {
+                                    fileName: "[project]/components/sections/Skills.tsx",
+                                    lineNumber: 693,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {}, void 0, false, {
+                                    fileName: "[project]/components/sections/Skills.tsx",
+                                    lineNumber: 694,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/sections/Skills.tsx",
+                            lineNumber: 688,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            className: "skills__tape skills__tape--one skills__collage-piece",
+                            "aria-hidden": "true"
+                        }, void 0, false, {
+                            fileName: "[project]/components/sections/Skills.tsx",
+                            lineNumber: 697,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            className: "skills__tape skills__tape--two skills__collage-piece",
+                            "aria-hidden": "true"
+                        }, void 0, false, {
+                            fileName: "[project]/components/sections/Skills.tsx",
+                            lineNumber: 702,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "skills__checker skills__collage-piece",
+                            "aria-hidden": "true",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                children: "stack club"
+                            }, void 0, false, {
+                                fileName: "[project]/components/sections/Skills.tsx",
+                                lineNumber: 711,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/components/sections/Skills.tsx",
+                            lineNumber: 707,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "skills__photo-sticker skills__collage-piece",
+                            "aria-hidden": "true",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    children: "build"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/sections/Skills.tsx",
+                                    lineNumber: 718,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                    children: "✦"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/sections/Skills.tsx",
+                                    lineNumber: 719,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
+                                    children: "repeat"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/sections/Skills.tsx",
+                                    lineNumber: 720,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/sections/Skills.tsx",
+                            lineNumber: 714,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            className: "skills__star skills__star--one skills__collage-piece",
+                            "aria-hidden": "true",
+                            children: "✦"
+                        }, void 0, false, {
+                            fileName: "[project]/components/sections/Skills.tsx",
+                            lineNumber: 723,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            className: "skills__star skills__star--two skills__collage-piece",
+                            "aria-hidden": "true",
+                            children: "✦"
+                        }, void 0, false, {
+                            fileName: "[project]/components/sections/Skills.tsx",
+                            lineNumber: 730,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "skills__orbit-frame",
+                            "aria-label": "Tecnologias utilizadas no desenvolvimento",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "skills__paper-blob",
+                                    "aria-hidden": "true"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/sections/Skills.tsx",
+                                    lineNumber: 741,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "skills__core",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            children: "SKILLS"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/sections/Skills.tsx",
+                                            lineNumber: 744,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                            children: "</>"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/sections/Skills.tsx",
+                                            lineNumber: 745,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
+                                            children: "hover nos ícones"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/sections/Skills.tsx",
+                                            lineNumber: 746,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/sections/Skills.tsx",
+                                    lineNumber: 743,
+                                    columnNumber: 13
+                                }, this),
+                                ORBIT_ORDER.map((orbitName)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: `skills-orbit skills-orbit--${orbitName}`,
+                                        "data-orbit": orbitName,
+                                        "aria-label": `Órbita ${orbitName}`,
+                                        children: __TURBOPACK__imported__module__$5b$project$5d2f$data$2f$skills$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["skills"].filter((skill)=>skill.orbit === orbitName).map((skill)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                type: "button",
+                                                className: "skills-orbit__item",
+                                                "data-angle": skill.angle,
+                                                "data-skill": skill.id,
+                                                "aria-label": skill.name,
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "skills-orbit__icon",
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(SkillIcon, {
+                                                            name: skill.icon
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/components/sections/Skills.tsx",
+                                                            lineNumber: 770,
+                                                            columnNumber: 25
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/sections/Skills.tsx",
+                                                        lineNumber: 769,
+                                                        columnNumber: 23
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "skills-orbit__label",
+                                                        children: skill.name
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/sections/Skills.tsx",
+                                                        lineNumber: 773,
+                                                        columnNumber: 23
+                                                    }, this)
+                                                ]
+                                            }, skill.id, true, {
+                                                fileName: "[project]/components/sections/Skills.tsx",
+                                                lineNumber: 761,
+                                                columnNumber: 21
+                                            }, this))
+                                    }, orbitName, false, {
+                                        fileName: "[project]/components/sections/Skills.tsx",
+                                        lineNumber: 750,
+                                        columnNumber: 15
+                                    }, this))
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/sections/Skills.tsx",
+                            lineNumber: 737,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/components/sections/Skills.tsx",
+                    lineNumber: 678,
                     columnNumber: 9
                 }, this)
-            }, void 0, false, {
-                fileName: "[project]/components/sections/Skills.tsx",
-                lineNumber: 52,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true, {
+            ]
+        }, void 0, true, {
+            fileName: "[project]/components/sections/Skills.tsx",
+            lineNumber: 666,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
         fileName: "[project]/components/sections/Skills.tsx",
-        lineNumber: 43,
+        lineNumber: 661,
         columnNumber: 5
     }, this);
 }
@@ -2456,9 +3280,10 @@ _s(Skills, "zB1iyNZzwhay0S5kVAi3Ku2nFuE=", false, function() {
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useGSAP"]
     ];
 });
-_c = Skills;
-var _c;
-__turbopack_context__.k.register(_c, "Skills");
+_c1 = Skills;
+var _c, _c1;
+__turbopack_context__.k.register(_c, "SkillIcon");
+__turbopack_context__.k.register(_c1, "Skills");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
