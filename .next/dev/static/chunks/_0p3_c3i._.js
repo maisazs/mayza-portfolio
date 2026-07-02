@@ -2294,7 +2294,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@gsap/react/src/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$gsap$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/lib/gsap.ts [app-client] (ecmascript) <locals>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__ = __turbopack_context__.i("[project]/node_modules/gsap/index.js [app-client] (ecmascript) <locals> <export default as gsap>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$ScrollTrigger$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/gsap/ScrollTrigger.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$data$2f$skills$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/data/skills.ts [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$SectionHeading$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/SectionHeading.tsx [app-client] (ecmascript)");
 ;
@@ -2313,8 +2312,8 @@ const ORBIT_ORDER = [
 function SkillIcon({ name }) {
     const commonProps = {
         viewBox: "0 0 64 64",
-        width: 34,
-        height: 34,
+        width: 36,
+        height: 36,
         fill: "none",
         xmlns: "http://www.w3.org/2000/svg",
         "aria-hidden": true
@@ -2328,7 +2327,7 @@ function SkillIcon({ name }) {
                         cx: "32",
                         cy: "32",
                         r: "4.5",
-                        fill: "currentColor"
+                        fill: "#61DAFB"
                     }, void 0, false, {
                         fileName: "[project]/components/sections/Skills.tsx",
                         lineNumber: 43,
@@ -2339,8 +2338,8 @@ function SkillIcon({ name }) {
                         cy: "32",
                         rx: "25",
                         ry: "9.5",
-                        stroke: "currentColor",
-                        strokeWidth: "2.7"
+                        stroke: "#61DAFB",
+                        strokeWidth: "2.8"
                     }, void 0, false, {
                         fileName: "[project]/components/sections/Skills.tsx",
                         lineNumber: 44,
@@ -2351,8 +2350,8 @@ function SkillIcon({ name }) {
                         cy: "32",
                         rx: "25",
                         ry: "9.5",
-                        stroke: "currentColor",
-                        strokeWidth: "2.7",
+                        stroke: "#61DAFB",
+                        strokeWidth: "2.8",
                         transform: "rotate(60 32 32)"
                     }, void 0, false, {
                         fileName: "[project]/components/sections/Skills.tsx",
@@ -2364,8 +2363,8 @@ function SkillIcon({ name }) {
                         cy: "32",
                         rx: "25",
                         ry: "9.5",
-                        stroke: "currentColor",
-                        strokeWidth: "2.7",
+                        stroke: "#61DAFB",
+                        strokeWidth: "2.8",
                         transform: "rotate(120 32 32)"
                     }, void 0, false, {
                         fileName: "[project]/components/sections/Skills.tsx",
@@ -2386,8 +2385,7 @@ function SkillIcon({ name }) {
                         cx: "32",
                         cy: "32",
                         r: "25",
-                        stroke: "currentColor",
-                        strokeWidth: "2.6"
+                        fill: "#050505"
                     }, void 0, false, {
                         fileName: "[project]/components/sections/Skills.tsx",
                         lineNumber: 76,
@@ -2395,23 +2393,23 @@ function SkillIcon({ name }) {
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                         d: "M20 44V20l25 31",
-                        stroke: "currentColor",
+                        stroke: "#fffefd",
                         strokeWidth: "3.2",
                         strokeLinecap: "round",
                         strokeLinejoin: "round"
                     }, void 0, false, {
                         fileName: "[project]/components/sections/Skills.tsx",
-                        lineNumber: 83,
+                        lineNumber: 77,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                         d: "M43 20v17",
-                        stroke: "currentColor",
+                        stroke: "#fffefd",
                         strokeWidth: "3.2",
                         strokeLinecap: "round"
                     }, void 0, false, {
                         fileName: "[project]/components/sections/Skills.tsx",
-                        lineNumber: 90,
+                        lineNumber: 84,
                         columnNumber: 11
                     }, this)
                 ]
@@ -2425,43 +2423,42 @@ function SkillIcon({ name }) {
                 ...commonProps,
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
-                        x: "8",
-                        y: "8",
-                        width: "48",
-                        height: "48",
+                        x: "7",
+                        y: "7",
+                        width: "50",
+                        height: "50",
                         rx: "7",
-                        stroke: "currentColor",
-                        strokeWidth: "2.5"
+                        fill: "#3178C6"
                     }, void 0, false, {
                         fileName: "[project]/components/sections/Skills.tsx",
-                        lineNumber: 102,
+                        lineNumber: 96,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                        d: "M18 24h21M28.5 24v22",
-                        stroke: "currentColor",
+                        d: "M17 22h23M28.5 22v25",
+                        stroke: "#fffefd",
                         strokeWidth: "3.2",
                         strokeLinecap: "round"
                     }, void 0, false, {
                         fileName: "[project]/components/sections/Skills.tsx",
-                        lineNumber: 111,
+                        lineNumber: 97,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                        d: "M42 31c-5-3-9-1.5-9 2 0 5 11 2.5 11 8 0 4-4 6-10 3",
-                        stroke: "currentColor",
+                        d: "M43 30c-5-3-9-1.5-9 2 0 5 11 2.5 11 8 0 4-4 6-10 3",
+                        stroke: "#fffefd",
                         strokeWidth: "3.2",
                         strokeLinecap: "round",
                         strokeLinejoin: "round"
                     }, void 0, false, {
                         fileName: "[project]/components/sections/Skills.tsx",
-                        lineNumber: 117,
+                        lineNumber: 103,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/sections/Skills.tsx",
-                lineNumber: 101,
+                lineNumber: 95,
                 columnNumber: 9
             }, this);
         case "javascript":
@@ -2469,42 +2466,41 @@ function SkillIcon({ name }) {
                 ...commonProps,
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
-                        x: "8",
-                        y: "8",
-                        width: "48",
-                        height: "48",
-                        rx: "6",
-                        stroke: "currentColor",
-                        strokeWidth: "2.5"
+                        x: "7",
+                        y: "7",
+                        width: "50",
+                        height: "50",
+                        rx: "5",
+                        fill: "#F7DF1E"
                     }, void 0, false, {
                         fileName: "[project]/components/sections/Skills.tsx",
-                        lineNumber: 130,
+                        lineNumber: 116,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                        d: "M29 22v22c0 5-3 7-7 7-3 0-5-1-7-3",
-                        stroke: "currentColor",
+                        d: "M29 21v23c0 5-3 7-7 7-3 0-5-1-7-3",
+                        stroke: "#050505",
                         strokeWidth: "3",
                         strokeLinecap: "round"
                     }, void 0, false, {
                         fileName: "[project]/components/sections/Skills.tsx",
-                        lineNumber: 139,
+                        lineNumber: 117,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                         d: "M48 28c-3-3-9-3-9 1 0 5 11 3 11 9 0 5-6 7-12 3",
-                        stroke: "currentColor",
+                        stroke: "#050505",
                         strokeWidth: "3",
                         strokeLinecap: "round"
                     }, void 0, false, {
                         fileName: "[project]/components/sections/Skills.tsx",
-                        lineNumber: 145,
+                        lineNumber: 123,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/sections/Skills.tsx",
-                lineNumber: 129,
+                lineNumber: 115,
                 columnNumber: 9
             }, this);
         case "tailwind":
@@ -2513,30 +2509,25 @@ function SkillIcon({ name }) {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                         d: "M10 25c6-10 13-14 22-12 7 1 10 6 14 10 4 4 7 5 12 2-6 10-13 14-22 12-7-1-10-6-14-10-4-4-7-5-12-2Z",
-                        stroke: "currentColor",
-                        strokeWidth: "2.8",
-                        strokeLinecap: "round",
-                        strokeLinejoin: "round"
+                        fill: "#06B6D4"
                     }, void 0, false, {
                         fileName: "[project]/components/sections/Skills.tsx",
-                        lineNumber: 157,
+                        lineNumber: 135,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                         d: "M10 42c6-10 13-14 22-12 7 1 10 6 14 10 4 4 7 5 12 2-6 10-13 14-22 12-7-1-10-6-14-10-4-4-7-5-12-2Z",
-                        stroke: "currentColor",
-                        strokeWidth: "2.8",
-                        strokeLinecap: "round",
-                        strokeLinejoin: "round"
+                        fill: "#06B6D4",
+                        opacity: "0.76"
                     }, void 0, false, {
                         fileName: "[project]/components/sections/Skills.tsx",
-                        lineNumber: 164,
+                        lineNumber: 139,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/sections/Skills.tsx",
-                lineNumber: 156,
+                lineNumber: 134,
                 columnNumber: 9
             }, this);
         case "html":
@@ -2545,29 +2536,27 @@ function SkillIcon({ name }) {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                         d: "M13 8h38l-4 44-15 4-15-4-4-44Z",
-                        stroke: "currentColor",
-                        strokeWidth: "2.5",
-                        strokeLinejoin: "round"
+                        fill: "#E34F26"
                     }, void 0, false, {
                         fileName: "[project]/components/sections/Skills.tsx",
-                        lineNumber: 177,
+                        lineNumber: 150,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                         d: "M22 20h21l-1 8H24l1 8h16l-1 9-8 2-8-2-.5-5",
-                        stroke: "currentColor",
+                        stroke: "#fffefd",
                         strokeWidth: "2.8",
                         strokeLinecap: "round",
                         strokeLinejoin: "round"
                     }, void 0, false, {
                         fileName: "[project]/components/sections/Skills.tsx",
-                        lineNumber: 183,
+                        lineNumber: 151,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/sections/Skills.tsx",
-                lineNumber: 176,
+                lineNumber: 149,
                 columnNumber: 9
             }, this);
         case "css":
@@ -2576,29 +2565,27 @@ function SkillIcon({ name }) {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                         d: "M13 8h38l-4 44-15 4-15-4-4-44Z",
-                        stroke: "currentColor",
-                        strokeWidth: "2.5",
-                        strokeLinejoin: "round"
+                        fill: "#1572B6"
                     }, void 0, false, {
                         fileName: "[project]/components/sections/Skills.tsx",
-                        lineNumber: 196,
+                        lineNumber: 164,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                         d: "M22 20h21l-1 8H26l-1 7h16l-1 10-8 2-8-2-.5-5",
-                        stroke: "currentColor",
+                        stroke: "#fffefd",
                         strokeWidth: "2.8",
                         strokeLinecap: "round",
                         strokeLinejoin: "round"
                     }, void 0, false, {
                         fileName: "[project]/components/sections/Skills.tsx",
-                        lineNumber: 202,
+                        lineNumber: 165,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/sections/Skills.tsx",
-                lineNumber: 195,
+                lineNumber: 163,
                 columnNumber: 9
             }, this);
         case "gsap":
@@ -2607,29 +2594,29 @@ function SkillIcon({ name }) {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                         d: "M12 18h40M12 32h31M12 46h23",
-                        stroke: "currentColor",
-                        strokeWidth: "3.4",
+                        stroke: "#88CE02",
+                        strokeWidth: "4",
                         strokeLinecap: "round"
                     }, void 0, false, {
                         fileName: "[project]/components/sections/Skills.tsx",
-                        lineNumber: 215,
+                        lineNumber: 178,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                         d: "m44 25 8 7-8 7",
-                        stroke: "currentColor",
-                        strokeWidth: "3.4",
+                        stroke: "#88CE02",
+                        strokeWidth: "4",
                         strokeLinecap: "round",
                         strokeLinejoin: "round"
                     }, void 0, false, {
                         fileName: "[project]/components/sections/Skills.tsx",
-                        lineNumber: 221,
+                        lineNumber: 184,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/sections/Skills.tsx",
-                lineNumber: 214,
+                lineNumber: 177,
                 columnNumber: 9
             }, this);
         case "wordpress":
@@ -2639,29 +2626,39 @@ function SkillIcon({ name }) {
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
                         cx: "32",
                         cy: "32",
-                        r: "25",
-                        stroke: "currentColor",
-                        strokeWidth: "2.6"
+                        r: "26",
+                        fill: "#21759B"
                     }, void 0, false, {
                         fileName: "[project]/components/sections/Skills.tsx",
-                        lineNumber: 234,
+                        lineNumber: 197,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                        cx: "32",
+                        cy: "32",
+                        r: "20",
+                        stroke: "#fffefd",
+                        strokeWidth: "2.2"
+                    }, void 0, false, {
+                        fileName: "[project]/components/sections/Skills.tsx",
+                        lineNumber: 198,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                         d: "m18 22 10 25 6-16 7 16 7-23M16 22h14M37 22h10",
-                        stroke: "currentColor",
-                        strokeWidth: "2.7",
+                        stroke: "#fffefd",
+                        strokeWidth: "2.6",
                         strokeLinecap: "round",
                         strokeLinejoin: "round"
                     }, void 0, false, {
                         fileName: "[project]/components/sections/Skills.tsx",
-                        lineNumber: 241,
+                        lineNumber: 205,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/sections/Skills.tsx",
-                lineNumber: 233,
+                lineNumber: 196,
                 columnNumber: 9
             }, this);
         default:
@@ -2678,20 +2675,19 @@ function Skills() {
             if (!section) {
                 return;
             }
+            const orbitFrame = section.querySelector(".skills__orbit-frame");
             const orbitElements = ORBIT_ORDER.map({
-                "Skills.useGSAP.orbitElements": (orbitName)=>{
-                    return section.querySelector(`[data-orbit="${orbitName}"]`);
-                }
+                "Skills.useGSAP.orbitElements": (orbitName)=>section.querySelector(`[data-orbit="${orbitName}"]`)
             }["Skills.useGSAP.orbitElements"]);
-            if (orbitElements.some({
+            if (!orbitFrame || orbitElements.some({
                 "Skills.useGSAP": (orbit)=>!orbit
             }["Skills.useGSAP"])) {
                 return;
             }
             const speedByOrbit = {
-                inner: 8.5,
-                middle: 5.8,
-                outer: 3.8
+                inner: 7.6,
+                middle: 5.2,
+                outer: 3.4
             };
             const directionByOrbit = {
                 inner: 1,
@@ -2699,9 +2695,9 @@ function Skills() {
                 outer: 1
             };
             const initialAngleByOrbit = {
-                inner: -12,
-                middle: 26,
-                outer: -34
+                inner: -14,
+                middle: 24,
+                outer: -32
             };
             const runtime = ORBIT_ORDER.map({
                 "Skills.useGSAP.runtime": (orbitName, index)=>{
@@ -2736,14 +2732,14 @@ function Skills() {
             const cleanupListeners = [];
             let targetSpeed = 1;
             let currentSpeed = 1;
-            let lastWidth = 0;
+            let lastFrameWidth = 0;
             const updateRadii = {
                 "Skills.useGSAP.updateRadii": ()=>{
-                    const currentWidth = section.clientWidth;
-                    if (currentWidth === lastWidth) {
+                    const currentFrameWidth = orbitFrame.clientWidth;
+                    if (currentFrameWidth === lastFrameWidth) {
                         return;
                     }
-                    lastWidth = currentWidth;
+                    lastFrameWidth = currentFrameWidth;
                     runtime.forEach({
                         "Skills.useGSAP.updateRadii": (orbit)=>{
                             orbit.radius = orbit.element.getBoundingClientRect().width / 2;
@@ -2763,7 +2759,13 @@ function Skills() {
                                     const y = Math.sin(angleInRadians) * orbit.radius;
                                     orbit.setX[itemIndex](x);
                                     orbit.setY[itemIndex](y);
-                                    item.dataset.side = x > 0 ? "left" : "right";
+                                    const horizontalDistance = Math.abs(x);
+                                    const verticalDistance = Math.abs(y);
+                                    if (horizontalDistance >= verticalDistance) {
+                                        item.dataset.labelPosition = x >= 0 ? "right" : "left";
+                                    } else {
+                                        item.dataset.labelPosition = y >= 0 ? "bottom" : "top";
+                                    }
                                 }
                             }["Skills.useGSAP.renderOrbitPositions"]);
                         }
@@ -2777,8 +2779,8 @@ function Skills() {
                 "Skills.useGSAP.ticker": (_time, deltaTime)=>{
                     const delta = Math.min(deltaTime / 1000, 0.05);
                     updateRadii();
-                    targetSpeed += (1 - targetSpeed) * Math.min(1, delta * 2.8);
-                    currentSpeed += (targetSpeed - currentSpeed) * Math.min(1, delta * 8);
+                    targetSpeed += (1 - targetSpeed) * Math.min(1, delta * 2.7);
+                    currentSpeed += (targetSpeed - currentSpeed) * Math.min(1, delta * 7.5);
                     runtime.forEach({
                         "Skills.useGSAP.ticker": (orbit)=>{
                             if (!orbit.paused) {
@@ -2885,48 +2887,88 @@ function Skills() {
             const mm = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].matchMedia();
             mm.add("(min-width: 1024px) and (prefers-reduced-motion: no-preference)", {
                 "Skills.useGSAP": ()=>{
-                    const pinTrigger = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$ScrollTrigger$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ScrollTrigger"].create({
-                        trigger: section,
-                        start: "top top",
-                        end: "+=2600",
-                        pin: true,
-                        pinSpacing: true,
-                        anticipatePin: 1,
-                        invalidateOnRefresh: true,
-                        onUpdate: {
-                            "Skills.useGSAP.pinTrigger": (self)=>{
-                                const velocity = Math.abs(self.getVelocity());
-                                targetSpeed = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].utils.clamp(1, 7, 1 + velocity / 420);
-                            }
-                        }["Skills.useGSAP.pinTrigger"]
+                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].set(orbitFrame, {
+                        scale: 0.58,
+                        y: 56,
+                        transformOrigin: "center center"
                     });
+                    const pinnedTimeline = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].timeline({
+                        scrollTrigger: {
+                            trigger: section,
+                            start: "top top",
+                            end: "+=2800",
+                            pin: true,
+                            pinSpacing: true,
+                            scrub: 0.85,
+                            anticipatePin: 1,
+                            invalidateOnRefresh: true,
+                            onUpdate: {
+                                "Skills.useGSAP.pinnedTimeline": (self)=>{
+                                    const velocity = Math.abs(self.getVelocity());
+                                    targetSpeed = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].utils.clamp(1, 6.2, 1 + velocity / 450);
+                                }
+                            }["Skills.useGSAP.pinnedTimeline"]
+                        }
+                    });
+                    pinnedTimeline.to(orbitFrame, {
+                        scale: 1,
+                        y: 0,
+                        ease: "none",
+                        duration: 0.62
+                    }, 0).fromTo(".skills__cloud--one", {
+                        x: -18,
+                        rotate: -5
+                    }, {
+                        x: 34,
+                        rotate: 3,
+                        ease: "none",
+                        duration: 1
+                    }, 0).fromTo(".skills__cloud--two", {
+                        x: 24,
+                        rotate: 4
+                    }, {
+                        x: -28,
+                        rotate: -3,
+                        ease: "none",
+                        duration: 1
+                    }, 0).fromTo(".skills__photo-sticker", {
+                        rotate: -8,
+                        y: 18
+                    }, {
+                        rotate: 3,
+                        y: -12,
+                        ease: "none",
+                        duration: 1
+                    }, 0);
                     const entrance = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].timeline({
                         scrollTrigger: {
                             trigger: section,
-                            start: "top 72%",
+                            start: "top 76%",
                             once: true
                         }
                     });
                     entrance.from(".skills__header", {
-                        x: -34,
+                        y: 30,
                         autoAlpha: 0,
-                        duration: 0.8,
+                        duration: 0.75,
                         ease: "power3.out"
-                    }).from(".skills__universe", {
-                        scale: 0.88,
-                        autoAlpha: 0,
-                        duration: 1,
-                        ease: "power3.out"
-                    }, "-=0.55").from(".skills-orbit__item", {
-                        scale: 0.4,
+                    }).from(".skills__collage-piece", {
+                        scale: 0.7,
+                        rotate: -5,
                         autoAlpha: 0,
                         duration: 0.55,
-                        stagger: 0.045,
-                        ease: "back.out(1.8)"
-                    }, "-=0.65");
+                        stagger: 0.06,
+                        ease: "back.out(1.5)"
+                    }, "-=0.4").from(".skills-orbit__item", {
+                        scale: 0.62,
+                        autoAlpha: 0,
+                        duration: 0.42,
+                        stagger: 0.04,
+                        ease: "back.out(1.4)"
+                    }, "-=0.42");
                     return ({
                         "Skills.useGSAP": ()=>{
-                            pinTrigger.kill();
+                            pinnedTimeline.kill();
                             entrance.kill();
                         }
                     })["Skills.useGSAP"];
@@ -2934,7 +2976,7 @@ function Skills() {
             }["Skills.useGSAP"]);
             const handleResize = {
                 "Skills.useGSAP.handleResize": ()=>{
-                    lastWidth = 0;
+                    lastFrameWidth = 0;
                     updateRadii();
                     renderOrbitPositions();
                 }
@@ -2961,223 +3003,275 @@ function Skills() {
         ref: root,
         id: "skills",
         className: "skills numeric-texture",
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "skills__ambient skills__ambient--one",
-                "aria-hidden": "true"
-            }, void 0, false, {
-                fileName: "[project]/components/sections/Skills.tsx",
-                lineNumber: 601,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "skills__ambient skills__ambient--two",
-                "aria-hidden": "true"
-            }, void 0, false, {
-                fileName: "[project]/components/sections/Skills.tsx",
-                lineNumber: 606,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "skills__layout",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "skills__header",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$SectionHeading$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SectionHeading"], {
-                                eyebrow: "Ferramentas / 04",
-                                title: "Tecnologias em órbita.",
-                                description: "Uma stack em movimento, conectando código, interface e experiências digitais.",
-                                light: true
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "skills__layout",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "skills__header",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$SectionHeading$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SectionHeading"], {
+                            title: "Tecnologias que fazem parte da minha stack.",
+                            description: "Ferramentas com as quais já trabalhei e continuo aprofundando meus conhecimentos no desenvolvimento front-end.",
+                            light: true
+                        }, void 0, false, {
+                            fileName: "[project]/components/sections/Skills.tsx",
+                            lineNumber: 668,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "skills__meta",
+                            "aria-hidden": "true"
+                        }, void 0, false, {
+                            fileName: "[project]/components/sections/Skills.tsx",
+                            lineNumber: 674,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/components/sections/Skills.tsx",
+                    lineNumber: 667,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "skills__stage",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "skills__cloud skills__cloud--one skills__collage-piece",
+                            "aria-hidden": "true",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {}, void 0, false, {
+                                    fileName: "[project]/components/sections/Skills.tsx",
+                                    lineNumber: 683,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {}, void 0, false, {
+                                    fileName: "[project]/components/sections/Skills.tsx",
+                                    lineNumber: 684,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {}, void 0, false, {
+                                    fileName: "[project]/components/sections/Skills.tsx",
+                                    lineNumber: 685,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/sections/Skills.tsx",
+                            lineNumber: 679,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "skills__cloud skills__cloud--two skills__collage-piece",
+                            "aria-hidden": "true",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {}, void 0, false, {
+                                    fileName: "[project]/components/sections/Skills.tsx",
+                                    lineNumber: 692,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {}, void 0, false, {
+                                    fileName: "[project]/components/sections/Skills.tsx",
+                                    lineNumber: 693,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {}, void 0, false, {
+                                    fileName: "[project]/components/sections/Skills.tsx",
+                                    lineNumber: 694,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/sections/Skills.tsx",
+                            lineNumber: 688,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            className: "skills__tape skills__tape--one skills__collage-piece",
+                            "aria-hidden": "true"
+                        }, void 0, false, {
+                            fileName: "[project]/components/sections/Skills.tsx",
+                            lineNumber: 697,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            className: "skills__tape skills__tape--two skills__collage-piece",
+                            "aria-hidden": "true"
+                        }, void 0, false, {
+                            fileName: "[project]/components/sections/Skills.tsx",
+                            lineNumber: 702,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "skills__checker skills__collage-piece",
+                            "aria-hidden": "true",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                children: "stack club"
                             }, void 0, false, {
                                 fileName: "[project]/components/sections/Skills.tsx",
-                                lineNumber: 613,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "skills__meta",
-                                "aria-hidden": "true",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        children: "09 tecnologias"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/sections/Skills.tsx",
-                                        lineNumber: 621,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        children: "movimento contínuo"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/sections/Skills.tsx",
-                                        lineNumber: 622,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/components/sections/Skills.tsx",
-                                lineNumber: 620,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "skills__scroll-hint",
-                                "aria-hidden": "true",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {}, void 0, false, {
-                                        fileName: "[project]/components/sections/Skills.tsx",
-                                        lineNumber: 626,
-                                        columnNumber: 13
-                                    }, this),
-                                    "role para acelerar"
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/components/sections/Skills.tsx",
-                                lineNumber: 625,
-                                columnNumber: 11
+                                lineNumber: 711,
+                                columnNumber: 13
                             }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/components/sections/Skills.tsx",
-                        lineNumber: 612,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "skills__universe",
-                        "aria-label": "Tecnologias utilizadas no desenvolvimento",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "skills__core",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        children: "stack"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/sections/Skills.tsx",
-                                        lineNumber: 636,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                        children: [
-                                            "código",
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                                fileName: "[project]/components/sections/Skills.tsx",
-                                                lineNumber: 640,
-                                                columnNumber: 15
-                                            }, this),
-                                            "em movimento"
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/components/sections/Skills.tsx",
-                                        lineNumber: 638,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
-                                        children: "hover para identificar"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/sections/Skills.tsx",
-                                        lineNumber: 644,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/components/sections/Skills.tsx",
-                                lineNumber: 635,
-                                columnNumber: 11
-                            }, this),
-                            ORBIT_ORDER.map((orbitName)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: `skills-orbit skills-orbit--${orbitName}`,
-                                    "data-orbit": orbitName,
-                                    "aria-label": `Órbita ${orbitName}`,
-                                    children: __TURBOPACK__imported__module__$5b$project$5d2f$data$2f$skills$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["skills"].filter((skill)=>skill.orbit === orbitName).map((skill)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                            type: "button",
-                                            className: "skills-orbit__item",
-                                            "data-angle": skill.angle,
-                                            "data-skill": skill.id,
-                                            "aria-label": skill.name,
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "skills-orbit__icon",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(SkillIcon, {
-                                                        name: skill.icon
+                        }, void 0, false, {
+                            fileName: "[project]/components/sections/Skills.tsx",
+                            lineNumber: 707,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "skills__photo-sticker skills__collage-piece",
+                            "aria-hidden": "true",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    children: "build"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/sections/Skills.tsx",
+                                    lineNumber: 718,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                    children: "✦"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/sections/Skills.tsx",
+                                    lineNumber: 719,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
+                                    children: "repeat"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/sections/Skills.tsx",
+                                    lineNumber: 720,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/sections/Skills.tsx",
+                            lineNumber: 714,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            className: "skills__star skills__star--one skills__collage-piece",
+                            "aria-hidden": "true",
+                            children: "✦"
+                        }, void 0, false, {
+                            fileName: "[project]/components/sections/Skills.tsx",
+                            lineNumber: 723,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            className: "skills__star skills__star--two skills__collage-piece",
+                            "aria-hidden": "true",
+                            children: "✦"
+                        }, void 0, false, {
+                            fileName: "[project]/components/sections/Skills.tsx",
+                            lineNumber: 730,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "skills__orbit-frame",
+                            "aria-label": "Tecnologias utilizadas no desenvolvimento",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "skills__paper-blob",
+                                    "aria-hidden": "true"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/sections/Skills.tsx",
+                                    lineNumber: 741,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "skills__core",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            children: "SKILLS"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/sections/Skills.tsx",
+                                            lineNumber: 744,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                            children: "</>"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/sections/Skills.tsx",
+                                            lineNumber: 745,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
+                                            children: "hover nos ícones"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/sections/Skills.tsx",
+                                            lineNumber: 746,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/sections/Skills.tsx",
+                                    lineNumber: 743,
+                                    columnNumber: 13
+                                }, this),
+                                ORBIT_ORDER.map((orbitName)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: `skills-orbit skills-orbit--${orbitName}`,
+                                        "data-orbit": orbitName,
+                                        "aria-label": `Órbita ${orbitName}`,
+                                        children: __TURBOPACK__imported__module__$5b$project$5d2f$data$2f$skills$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["skills"].filter((skill)=>skill.orbit === orbitName).map((skill)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                type: "button",
+                                                className: "skills-orbit__item",
+                                                "data-angle": skill.angle,
+                                                "data-skill": skill.id,
+                                                "aria-label": skill.name,
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "skills-orbit__icon",
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(SkillIcon, {
+                                                            name: skill.icon
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/components/sections/Skills.tsx",
+                                                            lineNumber: 770,
+                                                            columnNumber: 25
+                                                        }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/sections/Skills.tsx",
-                                                        lineNumber: 666,
+                                                        lineNumber: 769,
+                                                        columnNumber: 23
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "skills-orbit__label",
+                                                        children: skill.name
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/sections/Skills.tsx",
+                                                        lineNumber: 773,
                                                         columnNumber: 23
                                                     }, this)
-                                                }, void 0, false, {
-                                                    fileName: "[project]/components/sections/Skills.tsx",
-                                                    lineNumber: 665,
-                                                    columnNumber: 21
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "skills-orbit__label",
-                                                    children: skill.name
-                                                }, void 0, false, {
-                                                    fileName: "[project]/components/sections/Skills.tsx",
-                                                    lineNumber: 669,
-                                                    columnNumber: 21
-                                                }, this)
-                                            ]
-                                        }, skill.id, true, {
-                                            fileName: "[project]/components/sections/Skills.tsx",
-                                            lineNumber: 657,
-                                            columnNumber: 19
-                                        }, this))
-                                }, orbitName, false, {
-                                    fileName: "[project]/components/sections/Skills.tsx",
-                                    lineNumber: 648,
-                                    columnNumber: 13
-                                }, this)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "skills__spark skills__spark--one",
-                                "aria-hidden": "true",
-                                children: "✦"
-                            }, void 0, false, {
-                                fileName: "[project]/components/sections/Skills.tsx",
-                                lineNumber: 677,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "skills__spark skills__spark--two",
-                                "aria-hidden": "true",
-                                children: "+"
-                            }, void 0, false, {
-                                fileName: "[project]/components/sections/Skills.tsx",
-                                lineNumber: 684,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "skills__coordinate skills__coordinate--one",
-                                "aria-hidden": "true",
-                                children: "04 / STACK"
-                            }, void 0, false, {
-                                fileName: "[project]/components/sections/Skills.tsx",
-                                lineNumber: 691,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "skills__coordinate skills__coordinate--two",
-                                "aria-hidden": "true",
-                                children: "360° / LOOP"
-                            }, void 0, false, {
-                                fileName: "[project]/components/sections/Skills.tsx",
-                                lineNumber: 698,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/components/sections/Skills.tsx",
-                        lineNumber: 631,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/components/sections/Skills.tsx",
-                lineNumber: 611,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true, {
+                                                ]
+                                            }, skill.id, true, {
+                                                fileName: "[project]/components/sections/Skills.tsx",
+                                                lineNumber: 761,
+                                                columnNumber: 21
+                                            }, this))
+                                    }, orbitName, false, {
+                                        fileName: "[project]/components/sections/Skills.tsx",
+                                        lineNumber: 750,
+                                        columnNumber: 15
+                                    }, this))
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/sections/Skills.tsx",
+                            lineNumber: 737,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/components/sections/Skills.tsx",
+                    lineNumber: 678,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/components/sections/Skills.tsx",
+            lineNumber: 666,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
         fileName: "[project]/components/sections/Skills.tsx",
-        lineNumber: 596,
+        lineNumber: 661,
         columnNumber: 5
     }, this);
 }
