@@ -87,13 +87,13 @@ a {
 
 .paper-texture {
   background-color: var(--paper);
-  background-image: linear-gradient(rgba(250, 248, 243, 0.83), rgba(250, 248, 243, 0.83)), url("/textures/paper.png");
+  background-image: linear-gradient(rgba(250, 248, 243, 0.83), rgba(250, 248, 243, 0.83)), var(--paper-texture);
   background-size: auto, 760px 760px;
 }
 
 .numeric-texture {
   background-color: var(--ink);
-  background-image: linear-gradient(rgba(5, 5, 5, 0.76), rgba(5, 5, 5, 0.76)), url("/textures/numeric-grid.png");
+  background-image: linear-gradient(rgba(5, 5, 5, 0.76), rgba(5, 5, 5, 0.76)), var(--numeric-texture);
   background-size: auto, 430px 430px;
 }
 
