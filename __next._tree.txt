@@ -1,5 +1,5 @@
-:HL["/mayza-portfolio/_next/static/chunks/2q3ywrs7pejzc.css","style"]
+:HL["/mayza-portfolio/_next/static/chunks/1ndjf6otl2ag6.css","style"]
 :HL["/mayza-portfolio/_next/static/chunks/3sebttktoezxs.css","style"]
 :HL["/images/image-3.jpeg","image"]
 :HL["/images/image-2.png","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"3nf52MwslxmhcnFLtLg76"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"2F4_72h9ksPwKei_LAmDF"}
