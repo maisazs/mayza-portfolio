@@ -1,21 +1,18 @@
 import { DecorativeStar } from "@/components/ui/DecorativeStar";
-import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { withBasePath } from "@/lib/paths";
 
 export function About() {
   return (
     <section id="sobre" className="about paper-texture section-shell">
       <div className="about__visual">
         <div className="about__photo about__photo--one">
-          <img src="/images/image-3.jpeg" alt="Computer" draggable={false} />
+          <img src={withBasePath("/images/image-3.jpeg")} alt="Computer" draggable={false} />
         </div>
         <div className="about__photo about__photo--two">
-          <img src="/images/image-2.png" alt="Mayza Ester" draggable={false} />
+          <img src={withBasePath("/images/image-2.png")} alt="Mayza Ester" draggable={false} />
         </div>
         <div className="about__tape" aria-hidden="true" />
-        <div className="about__scribble" aria-hidden="true">
-          identidade → interface → impacto
-        </div>
         <DecorativeStar className="about__star" size={110} draggable={false} />
       </div>
 
