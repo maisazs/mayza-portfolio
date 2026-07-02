@@ -231,13 +231,28 @@ export function Skills() {
       const orbitFrame =
         section.querySelector<HTMLElement>(".skills__orbit-frame");
 
+      const projectsCover =
+        section.querySelector<HTMLElement>(
+          ".skills__projects-cover",
+        );
+
+      const projectsCoverHeading =
+        section.querySelector<HTMLElement>(
+          ".skills__projects-cover-heading",
+        );
+
       const orbitElements = ORBIT_ORDER.map((orbitName) =>
         section.querySelector<HTMLElement>(
           `[data-orbit="${orbitName}"]`,
         ),
       );
 
-      if (!orbitFrame || orbitElements.some((orbit) => !orbit)) {
+      if (
+        !orbitFrame ||
+        !projectsCover ||
+        !projectsCoverHeading ||
+        orbitElements.some((orbit) => !orbit)
+      ) {
         return;
       }
 
@@ -501,11 +516,25 @@ export function Skills() {
             transformOrigin: "center center",
           });
 
+          gsap.set(projectsCover, {
+            yPercent: 100,
+            y: 120,
+          });
+
+          gsap.set(projectsCoverHeading, {
+            autoAlpha: 0,
+            y: 96,
+          });
+
+          gsap.set(section, {
+            "--skills-projects-cloud-x": "0px",
+          });
+
           const pinnedTimeline = gsap.timeline({
             scrollTrigger: {
               trigger: section,
               start: "top top",
-              end: "+=2800",
+              end: "+=4400",
               pin: true,
               pinSpacing: true,
               scrub: 0.85,
@@ -525,13 +554,16 @@ export function Skills() {
           });
 
           pinnedTimeline
+            /*
+             * Primeiro momento: a stack cresce e reage ao scroll.
+             */
             .to(
               orbitFrame,
               {
                 scale: 1,
                 y: 0,
                 ease: "none",
-                duration: 0.62,
+                duration: 1,
               },
               0,
             )
@@ -576,7 +608,77 @@ export function Skills() {
                 duration: 1,
               },
               0,
-            );
+            )
+
+            /*
+             * Skills permanece parada enquanto a camada clara
+             * sobe e cobre a viewport.
+             */
+            .to(
+              projectsCover,
+              {
+                yPercent: 0,
+                y: 0,
+                ease: "none",
+                duration: 1.15,
+              },
+              1,
+            )
+            .to(
+              section,
+              {
+                "--skills-projects-cloud-x": "96px",
+                ease: "none",
+                duration: 1.15,
+              },
+              1,
+            )
+
+            /*
+             * A copy de Projetos começa a aparecer antes de
+             * a cobertura atingir completamente o topo.
+             */
+            .to(
+              projectsCoverHeading,
+              {
+                autoAlpha: 1,
+                y: 0,
+                duration: 0.42,
+                ease: "power3.out",
+              },
+              1.58,
+            )
+            .from(
+              ".skills__projects-cover-heading .eyebrow",
+              {
+                x: -24,
+                autoAlpha: 0,
+                duration: 0.26,
+                ease: "power2.out",
+              },
+              1.58,
+            )
+            .from(
+              ".skills__projects-cover-heading .section-title",
+              {
+                y: 42,
+                clipPath: "inset(0 0 100% 0)",
+                duration: 0.4,
+                ease: "power3.out",
+              },
+              1.62,
+            )
+            .from(
+              ".skills__projects-cover-heading .section-description",
+              {
+                y: 28,
+                autoAlpha: 0,
+                duration: 0.3,
+                ease: "power2.out",
+              },
+              1.78,
+            )
+            .to({}, { duration: 0.18 });
 
           const entrance = gsap.timeline({
             scrollTrigger: {
@@ -778,6 +880,22 @@ export function Skills() {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/*
+       * Como esta camada está dentro da seção pinada,
+       * Skills permanece imóvel enquanto as nuvens sobem.
+       */}
+      <div
+        className="skills__projects-cover paper-texture"
+        aria-hidden="true"
+      >
+        <div className="skills__projects-cover-heading section-shell">
+          <SectionHeading
+            title="Alguns projetos que desenvolvi."
+            description="Uma seleção de sites e interfaces que desenvolvi, unindo código, responsividade e atenção aos detalhes."
+          />
         </div>
       </div>
     </section>

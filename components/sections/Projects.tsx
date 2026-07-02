@@ -44,185 +44,64 @@ export function Projects() {
 
   useGSAP(
     () => {
-      const section = root.current;
-
-      if (!section) {
-        return;
-      }
-
       const cards =
         gsap.utils.toArray<HTMLElement>(".project-card");
 
-      const introHeading =
-        section.querySelector<HTMLElement>(
-          ".projects__intro-heading",
+      const mobileHeading =
+        root.current?.querySelector<HTMLElement>(
+          ".projects__mobile-heading",
         );
 
       const mm = gsap.matchMedia();
 
       mm.add(
         {
-          desktop: "(min-width: 1024px)",
-          mobile: "(max-width: 1023px)",
-          reduceMotion:
-            "(prefers-reduced-motion: reduce)",
+          motion:
+            "(prefers-reduced-motion: no-preference)",
+          mobile:
+            "(max-width: 1023px) and (prefers-reduced-motion: no-preference)",
         },
         (context) => {
-          const { desktop, mobile, reduceMotion } =
+          const { motion, mobile } =
             context.conditions as {
-              desktop: boolean;
+              motion: boolean;
               mobile: boolean;
-              reduceMotion: boolean;
             };
 
-          if (reduceMotion) {
-            return;
-          }
-
-          /*
-           * Enquanto a borda sobe pela viewport,
-           * o desenho das nuvens deriva lateralmente.
-           * A própria seção subindo produz o movimento vertical.
-           */
-          gsap.to(section, {
-            "--projects-cloud-x-top": "92px",
-            "--projects-cloud-x-bottom": "-76px",
-            ease: "none",
-
-            scrollTrigger: {
-              trigger: section,
-              start: "top bottom",
-              end: "top top",
-              scrub: true,
-              invalidateOnRefresh: true,
-            },
-          });
-
-          /*
-           * No desktop, a tela branca é fixada somente
-           * depois que a borda de nuvens alcança o topo.
-           * O título entra durante essa etapa.
-           */
-          if (desktop && introHeading) {
-            gsap.set(introHeading, {
+          if (mobile && mobileHeading) {
+            gsap.from(mobileHeading, {
+              y: 62,
               autoAlpha: 0,
-              y: 130,
-              scale: 0.985,
-            });
-
-            gsap.set(".projects__intro-heading .eyebrow", {
-              x: -24,
-            });
-
-            const revealTimeline = gsap.timeline({
-              scrollTrigger: {
-                trigger: ".projects__cloud-intro",
-                start: "top top",
-                end: "+=950",
-                pin: true,
-                pinSpacing: true,
-                scrub: 0.85,
-                anticipatePin: 1,
-                invalidateOnRefresh: true,
-              },
-            });
-
-            revealTimeline
-              /*
-               * Pequena pausa com a viewport totalmente branca.
-               */
-              .to({}, { duration: 0.16 })
-
-              /*
-               * O conteúdo começa a subir somente depois
-               * que a cobertura branca está completa.
-               */
-              .to(introHeading, {
-                autoAlpha: 1,
-                y: 0,
-                scale: 1,
-                duration: 0.5,
-                ease: "power3.out",
-              })
-
-              .to(
-                ".projects__intro-heading .eyebrow",
-                {
-                  x: 0,
-                  duration: 0.28,
-                  ease: "power2.out",
-                },
-                "-=0.38",
-              )
-
-              .from(
-                ".projects__intro-heading .section-title",
-                {
-                  clipPath: "inset(0 0 100% 0)",
-                  y: 45,
-                  duration: 0.42,
-                  ease: "power3.out",
-                },
-                "-=0.32",
-              )
-
-              .from(
-                ".projects__intro-heading .section-description",
-                {
-                  y: 34,
-                  autoAlpha: 0,
-                  duration: 0.32,
-                  ease: "power2.out",
-                },
-                "-=0.2",
-              )
-
-              /*
-               * Mantém a composição visível por um pequeno
-               * trecho antes de liberar o restante da seção.
-               */
-              .to({}, { duration: 0.2 });
-          }
-
-          /*
-           * No tablet e no celular não usamos pin,
-           * mas preservamos a entrada depois da cobertura.
-           */
-          if (mobile && introHeading) {
-            gsap.from(introHeading, {
-              y: 68,
-              autoAlpha: 0,
-              duration: 0.85,
+              duration: 0.82,
               ease: "power3.out",
 
               scrollTrigger: {
-                trigger: introHeading,
+                trigger: mobileHeading,
                 start: "top 86%",
                 once: true,
               },
             });
           }
 
-          /*
-           * Os cards entram somente quando a grade começa
-           * a alcançar a viewport.
-           */
-          cards.forEach((card, index) => {
-            gsap.from(card, {
-              y: index % 2 === 0 ? 58 : 88,
-              rotate: index % 2 === 0 ? -0.6 : 0.8,
-              opacity: 0,
-              duration: 0.9,
-              delay: index * 0.035,
-              ease: "power3.out",
+          if (motion) {
+            cards.forEach((card, index) => {
+              gsap.from(card, {
+                y: index % 2 === 0 ? 58 : 88,
+                rotate:
+                  index % 2 === 0 ? -0.6 : 0.8,
+                opacity: 0,
+                duration: 0.9,
+                delay: index * 0.035,
+                ease: "power3.out",
 
-              scrollTrigger: {
-                trigger: card,
-                start: "top 84%",
-                once: true,
-              },
+                scrollTrigger: {
+                  trigger: card,
+                  start: "top 84%",
+                  once: true,
+                },
+              });
             });
-          });
+          }
         },
       );
 
@@ -240,19 +119,25 @@ export function Projects() {
       ref={root}
       id="projetos"
       className="projects paper-texture"
+      aria-labelledby="projects-title"
     >
       {/*
-       * Este bloco funciona como a grande área branca.
-       * A borda de nuvens chega primeiro; o título aparece
-       * apenas quando a viewport já está completamente clara.
+       * Título acessível da seção.
+       * No desktop, o título visual aparece dentro da cobertura
+       * de nuvens da Skills. No mobile, ele aparece abaixo.
        */}
-      <div className="projects__cloud-intro">
-        <div className="projects__intro-heading section-shell">
-          <SectionHeading
-            title="Ideias que ganharam estrutura, interface e movimento."
-            description="Os cards abaixo estão preparados para receber os projetos reais, capas, links e estudos de caso da Mayza."
-          />
-        </div>
+      <h2
+        id="projects-title"
+        className="projects__sr-title"
+      >
+        Alguns projetos que desenvolvi.
+      </h2>
+
+      <div className="projects__mobile-heading section-shell">
+        <SectionHeading
+          title="Alguns projetos que desenvolvi."
+          description="Uma seleção de sites e interfaces que desenvolvi, unindo código, responsividade e atenção aos detalhes."
+        />
       </div>
 
       <div className="projects__content section-shell">
