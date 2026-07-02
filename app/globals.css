@@ -3025,15 +3025,11 @@ a {
 }
 
 .projects__content {
-  /*
-   * Aproxima o primeiro projeto da copy exibida
-   * durante a transição de Skills.
-   */
   margin-top:
-    clamp(-96px, -7svh, -56px);
+    clamp(-320px, -30svh, -300px);
 
   padding-top:
-    clamp(34px, 3.5vw, 58px);
+    clamp(20px, 2vw, 36px);
 
   padding-bottom:
     clamp(34px, 3vw, 56px);
