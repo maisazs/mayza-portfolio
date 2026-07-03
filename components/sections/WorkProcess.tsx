@@ -49,10 +49,17 @@ export function WorkProcess() {
           ".process__reveal-content",
         );
 
-      const projectsSection =
-        document.querySelector<HTMLElement>(".projects");
+      const heading =
+        section.querySelector<HTMLElement>(
+          ".process__reveal-content > .section-heading",
+        );
 
-      if (!content || !projectsSection) {
+      const notes =
+        section.querySelector<HTMLElement>(
+          ".process__reveal-content > .process__notes",
+        );
+
+      if (!content || !heading || !notes) {
         return;
       }
 
@@ -61,44 +68,76 @@ export function WorkProcess() {
       mm.add(
         "(min-width: 1024px) and (prefers-reduced-motion: no-preference)",
         () => {
-          /*
-           * O conteúdo permanece totalmente parado.
-           * Somente a opacidade evolui enquanto a borda
-           * de nuvens sobe e descobre a seção por baixo.
-           */
           gsap.set(content, {
-            y: 0,
-            autoAlpha: 0.18,
+            autoAlpha: 1,
           });
 
+          /*
+           * Como a seção Process começa com margin-top: -100svh,
+           * este gatilho inicia exatamente quando o final de
+           * Projects alcança a base da viewport.
+           *
+           * O fim considera também os 120px da borda de nuvens.
+           */
           const revealTimeline = gsap.timeline({
             scrollTrigger: {
-              trigger: projectsSection,
-              start: "bottom bottom",
-              end: "bottom top-=120",
-              scrub: 0.84,
+              trigger: section,
+              start: "top top",
+              end: () =>
+                `+=${window.innerHeight + 120}`,
+              scrub: 0.82,
               invalidateOnRefresh: true,
             },
           });
 
           revealTimeline
-            .to(
-              content,
+            .fromTo(
+              heading,
               {
-                autoAlpha: 0.48,
+                y: 46,
+                autoAlpha: 0.18,
+              },
+              {
+                y: 16,
+                autoAlpha: 0.58,
                 ease: "none",
-                duration: 0.8,
+                duration: 0.72,
               },
               0,
             )
-            .to(
-              content,
+            .fromTo(
+              notes,
               {
+                y: 68,
+                autoAlpha: 0.08,
+              },
+              {
+                y: 24,
+                autoAlpha: 0.44,
+                ease: "none",
+                duration: 0.72,
+              },
+              0.08,
+            )
+            .to(
+              heading,
+              {
+                y: 0,
                 autoAlpha: 1,
                 ease: "none",
-                duration: 0.2,
+                duration: 0.28,
               },
-              0.8,
+              0.72,
+            )
+            .to(
+              notes,
+              {
+                y: 0,
+                autoAlpha: 1,
+                ease: "none",
+                duration: 0.26,
+              },
+              0.74,
             );
 
           return () => {
@@ -125,7 +164,6 @@ export function WorkProcess() {
       <div className="process__sticky section-shell">
         <div className="process__reveal-content">
           <SectionHeading
-            eyebrow="Como trabalho / 06"
             title="Um processo leve, organizado e próximo."
             description="Boa execução começa com clareza. Cada etapa reduz ruído e aumenta a qualidade da entrega."
           />

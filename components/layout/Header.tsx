@@ -44,7 +44,7 @@ export function Header() {
             {item.label}
           </a>
         ))}
-        <a className="nav-cta" href="#contato" onClick={() => setOpen(false)}>
+        <a className="nav-cta" href="https://wa.me/5531992166917" onClick={() => setOpen(false)}>
           Vamos conversar
         </a>
       </nav>

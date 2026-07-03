@@ -3354,9 +3354,16 @@ a {
 .process__reveal-content {
   width: 100%;
 
+  opacity: 1;
+  visibility: visible;
   transform: none;
+}
 
-  will-change: opacity;
+.process__reveal-content>.section-heading,
+.process__reveal-content>.process__notes {
+  will-change:
+    transform,
+    opacity;
 }
 
 @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
@@ -3377,7 +3384,7 @@ a {
   }
 
   .process__reveal-content {
-    opacity: 0.18;
+    opacity: 1;
     visibility: visible;
     transform: none;
   }
@@ -4307,7 +4314,10 @@ body.is-loading {
 
 @media (max-width: 1023px),
 (prefers-reduced-motion: reduce) {
-  .process__reveal-content {
+
+  .process__reveal-content,
+  .process__reveal-content>.section-heading,
+  .process__reveal-content>.process__notes {
     opacity: 1 !important;
     visibility: visible !important;
     transform: none !important;

@@ -6,13 +6,13 @@ export const siteConfig = {
   description:
     "Desenvolvo interfaces que aproximam pessoas, ideias e produtos.",
 
-  email: "contatomayzaester@gmail.com",
+  email: "contatomayza@hotmail.com",
 
   // Substitua pelos dados reais.
-  phoneLabel: "ADICIONAR TELEFONE",
-  whatsappUrl: "#adicionar-whatsapp",
-  linkedinUrl: "#adicionar-linkedin",
-  githubUrl: "#adicionar-github",
+  phoneLabel: "(31)99216-6917",
+  whatsappUrl: "https://wa.me/5531992166917",
+  linkedinUrl: "https://www.linkedin.com/in/mayza-ester-assis-silva-6a9b55233?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+  githubUrl: "https://www.instagram.com/mayza.dev?igsh=MWVsMW8xa2ZtdnV6Zg%3D%3D&utm_source=qr",
 
   cvUrl: withBasePath("/cv/ADICIONAR-CV-AQUI.pdf"),
 };

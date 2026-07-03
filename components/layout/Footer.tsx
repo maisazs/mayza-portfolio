@@ -18,9 +18,9 @@ export function Footer() {
         </nav>
 
         <div className="site-footer__social">
-          <a href={siteConfig.githubUrl}>GitHub</a>
-          <a href={siteConfig.linkedinUrl}>LinkedIn</a>
-          <a href={`mailto:${siteConfig.email}`}>E-mail</a>
+          <a href={siteConfig.githubUrl} target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href={siteConfig.linkedinUrl} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href={`mailto:${siteConfig.email}`} target="_blank" rel="noopener noreferrer">E-mail</a>
         </div>
       </div>
 

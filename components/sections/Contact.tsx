@@ -5,7 +5,6 @@ export function Contact() {
   return (
     <section id="contato" className="contact">
       <div className="contact__intro">
-        <p className="eyebrow eyebrow--light">Contato / 07</p>
         <h2>Uma boa ideia pode começar com uma conversa.</h2>
         <p>
           Estou disponível para projetos freelancer, colaborações e oportunidades profissionais em desenvolvimento front-end.
@@ -18,21 +17,17 @@ export function Contact() {
           </a>
           <a href={siteConfig.linkedinUrl}>
             <span>LinkedIn</span>
-            <strong>ADICIONAR LINK</strong>
+            <strong>@mayzaester</strong>
           </a>
           <a href={siteConfig.githubUrl}>
-            <span>GitHub</span>
-            <strong>ADICIONAR LINK</strong>
+            <span>Instagram</span>
+            <strong>@mayza.dev</strong>
           </a>
           <a href={siteConfig.whatsappUrl}>
             <span>WhatsApp</span>
             <strong>{siteConfig.phoneLabel}</strong>
           </a>
         </div>
-
-        <a className="button button--pink" href={siteConfig.cvUrl} download>
-          Baixar currículo <span aria-hidden="true">↓</span>
-        </a>
       </div>
 
       <form className="contact-form" action={`mailto:${siteConfig.email}`} method="post" encType="text/plain">
