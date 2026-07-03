@@ -15,6 +15,8 @@ export const siteConfig = {
   githubUrl: "https://www.instagram.com/mayza.dev?igsh=MWVsMW8xa2ZtdnV6Zg%3D%3D&utm_source=qr",
 
   cvUrl: withBasePath("/cv/ADICIONAR-CV-AQUI.pdf"),
+
+  formEndpoint: "https://formspree.io/f/xojoydjd",
 };
 
 export const navItems = [

@@ -3628,6 +3628,39 @@ a {
   opacity: 0.32;
 }
 
+.contact-form button:disabled {
+  cursor: wait;
+  opacity: 0.62;
+  transform: none;
+}
+
+.contact-form__feedback {
+  min-height: 44px;
+  margin-top: 14px;
+}
+
+.contact-form__message {
+  margin: 0;
+  padding: 11px 13px;
+
+  border: 1px solid currentColor;
+
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.contact-form__message--success {
+  color: #155f3b;
+  background: #e5f5ec;
+}
+
+.contact-form__message--error {
+  color: #8a2135;
+  background: #fde8ed;
+}
+
 /* FOOTER */
 .site-footer {
   padding: 52px max(20px, calc((100vw - 1440px) / 2)) 24px;
