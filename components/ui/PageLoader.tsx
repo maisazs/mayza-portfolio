@@ -2,12 +2,15 @@
 
 import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
+
 import { gsap } from "@/lib/gsap";
 
 export function PageLoader() {
     const root = useRef<HTMLDivElement>(null);
     const counter = useRef<HTMLSpanElement>(null);
-    const [finished, setFinished] = useState(false);
+
+    const [finished, setFinished] =
+        useState(false);
 
     useGSAP(
         () => {
@@ -18,20 +21,30 @@ export function PageLoader() {
             }
 
             const finishLoading = () => {
-                document.body.classList.remove("is-loading");
-                document.documentElement.dataset.portfolioReady = "true";
+                document.body.classList.remove(
+                    "is-loading",
+                );
 
-                window.dispatchEvent(new Event("portfolio:ready"));
+                document.documentElement.dataset.portfolioReady =
+                    "true";
+
+                window.dispatchEvent(
+                    new Event("portfolio:ready"),
+                );
 
                 setFinished(true);
             };
 
-            document.body.classList.add("is-loading");
+            document.body.classList.add(
+                "is-loading",
+            );
+
             window.scrollTo(0, 0);
 
-            const prefersReducedMotion = window.matchMedia(
-                "(prefers-reduced-motion: reduce)",
-            ).matches;
+            const prefersReducedMotion =
+                window.matchMedia(
+                    "(prefers-reduced-motion: reduce)",
+                ).matches;
 
             if (prefersReducedMotion) {
                 finishLoading();
@@ -83,7 +96,8 @@ export function PageLoader() {
                     ".page-loader__arrow-line",
                     {
                         scaleX: 0,
-                        transformOrigin: "left center",
+                        transformOrigin:
+                            "left center",
                         duration: 0.8,
                     },
                     0.4,
@@ -112,17 +126,21 @@ export function PageLoader() {
                         value: 100,
                         duration: 1.65,
                         ease: "power2.inOut",
+
                         onUpdate: () => {
                             if (!counter.current) {
                                 return;
                             }
 
-                            const currentValue = Math.round(progress.value);
+                            const currentValue =
+                                Math.round(
+                                    progress.value,
+                                );
 
-                            counter.current.textContent = `${String(currentValue).padStart(
-                                2,
-                                "0",
-                            )}%`;
+                            counter.current.textContent =
+                                `${String(
+                                    currentValue,
+                                ).padStart(2, "0")}%`;
                         },
                     },
                     0.12,
@@ -140,7 +158,8 @@ export function PageLoader() {
                 .to(
                     loader,
                     {
-                        clipPath: "inset(0 0 100% 0)",
+                        clipPath:
+                            "inset(0 0 100% 0)",
                         duration: 0.95,
                         ease: "power4.inOut",
                     },
@@ -148,7 +167,11 @@ export function PageLoader() {
                 );
 
             return () => {
-                document.body.classList.remove("is-loading");
+                timeline.kill();
+
+                document.body.classList.remove(
+                    "is-loading",
+                );
             };
         },
         {
@@ -167,12 +190,17 @@ export function PageLoader() {
             role="status"
             aria-label="Carregando portfólio"
         >
-            <div className="page-loader__arch" aria-hidden="true" />
+            <div
+                className="page-loader__arch"
+                aria-hidden="true"
+            />
 
             <div className="page-loader__content">
                 <div className="page-loader__meta">
                     <span>MAYZA ESTER</span>
-                    <span>FRONT-END DEVELOPER</span>
+                    <span>
+                        FRONT-END DEVELOPER
+                    </span>
                 </div>
 
                 <div className="page-loader__center">
@@ -180,7 +208,10 @@ export function PageLoader() {
                         <span>PORTFÓLIO</span>
                     </h1>
 
-                    <div className="page-loader__route" aria-hidden="true">
+                    <div
+                        className="page-loader__route"
+                        aria-hidden="true"
+                    >
                         <span className="page-loader__arrow-line" />
 
                         <strong className="page-loader__pill">
@@ -190,9 +221,14 @@ export function PageLoader() {
                 </div>
 
                 <div className="page-loader__progress">
-                    <span>CARREGANDO EXPERIÊNCIA</span>
+                    <span>
+                        CARREGANDO EXPERIÊNCIA
+                    </span>
 
-                    <span ref={counter} aria-hidden="true">
+                    <span
+                        ref={counter}
+                        aria-hidden="true"
+                    >
                         00%
                     </span>
                 </div>

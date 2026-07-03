@@ -8,14 +8,14 @@ import { Skills } from "@/components/sections/Skills";
 import { Projects } from "@/components/sections/Projects";
 import { WorkProcess } from "@/components/sections/WorkProcess";
 import { Contact } from "@/components/sections/Contact";
-import { PageLoader } from "@/components/ui/PageLoader";
 
 export default function Home() {
   return (
     <>
-      <PageLoader />
-
-      <a className="skip-link" href="#conteudo">
+      <a
+        className="skip-link"
+        href="#conteudo"
+      >
         Pular para o conteúdo
       </a>
 

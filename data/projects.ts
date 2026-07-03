@@ -11,7 +11,11 @@ export type Project = {
   link: string;
   github?: string;
   featured?: boolean;
-  tone: "pink" | "paper" | "black" | "gray";
+  tone:
+  | "pink"
+  | "paper"
+  | "black"
+  | "gray";
   image: string;
 };
 
@@ -19,7 +23,8 @@ export const projects: Project[] = [
   {
     slug: "dra-luiza-matte-fujii",
     name: "Dra. Luiza Matté Fujii",
-    category: "Site Institucional · Psiquiatria",
+    category:
+      "Site Institucional · Psiquiatria",
     description:
       "Site institucional desenvolvido para posicionar um atendimento psiquiátrico humano, individualizado e baseado em evidências.",
     technologies: [
@@ -32,14 +37,18 @@ export const projects: Project[] = [
       "Comunicar acolhimento e autoridade médica sem tornar a experiência fria, genérica ou excessivamente clínica.",
     solution:
       "Criação de uma narrativa centrada na pessoa, com hierarquia clara, explicação do acompanhamento, prova social, perguntas frequentes e chamadas estratégicas para agendamento.",
-    link: "https://draluizamattefujii.com.br",
+    link:
+      "https://draluizamattefujii.com.br",
     tone: "paper",
-    image: withBasePath("/images/luiza-matte-banner.png"),
+    image: withBasePath(
+      "/images/luiza-matte-banner.png",
+    ),
   },
   {
     slug: "codev-leadership-school",
     name: "Code V Leadership School",
-    category: "Site Institucional · Educação e Liderança",
+    category:
+      "Site Institucional · Educação e Liderança",
     description:
       "Ecossistema digital criado para apresentar a filosofia, os programas e a jornada de formação da Code V Leadership School.",
     technologies: [
@@ -55,12 +64,15 @@ export const projects: Project[] = [
     link: "https://codev.pt",
     featured: true,
     tone: "black",
-    image: withBasePath("/images/codev-banner.png"),
+    image: withBasePath(
+      "/images/codev-banner.png",
+    ),
   },
   {
     slug: "dr-hugo-melo",
     name: "Dr. Hugo Melo",
-    category: "Site Institucional · Saúde Integrativa",
+    category:
+      "Site Institucional · Saúde Integrativa",
     description:
       "Site institucional para posicionar um atendimento otorrinolaringológico clínico e cirúrgico com abordagem integrativa.",
     technologies: [
@@ -75,12 +87,15 @@ export const projects: Project[] = [
       "Desenvolvimento de uma jornada baseada em sintomas, diferenciais, tratamentos, autoridade profissional, depoimentos e agendamento direto pelo WhatsApp.",
     link: "https://drhugomelo.com",
     tone: "gray",
-    image: withBasePath("/images/hugo-melo-banner.png"),
+    image: withBasePath(
+      "/images/hugo-melo-banner.png",
+    ),
   },
   {
     slug: "dra-gabriela-kettner",
     name: "Dra. Gabriela Kettner",
-    category: "Site Institucional · Oftalmologia",
+    category:
+      "Site Institucional · Oftalmologia",
     description:
       "Site institucional voltado à oftalmologia geral, cirurgia de catarata e cirurgia refrativa, com foco em segurança e acolhimento.",
     technologies: [
@@ -93,8 +108,23 @@ export const projects: Project[] = [
       "Reduzir o medo relacionado aos procedimentos oculares e transformar informações técnicas em uma decisão mais segura para o paciente.",
     solution:
       "Uso de conteúdo educativo, narrativa pessoal, diferenciais de atendimento, depoimentos e chamadas claras para conduzir o visitante até o agendamento.",
-    link: "https://dragabrielakettner.com",
+    link:
+      "https://dragabrielakettner.com",
     tone: "paper",
-    image: withBasePath("/images/gabriela-kettner-banner.png"),
+    image: withBasePath(
+      "/images/gabriela-kettner-banner.png",
+    ),
   },
+
+  /*
+   * Adicione os próximos projetos aqui.
+   * A página /projetos exibe todos automaticamente.
+   */
 ];
+
+/*
+ * A home permanece com a composição atual de quatro cards.
+ * A página interna usa o array projects completo.
+ */
+export const homeProjects =
+  projects.slice(0, 4);
