@@ -3041,18 +3041,29 @@ a {
   gap: clamp(24px, 3vw, 44px);
 }
 
+.project-visual__image {
+  position: absolute;
 
-.project-card {
-  grid-column: span 6;
-  overflow: hidden;
+  inset: 0;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition:
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.project-card--featured {
-  grid-column: span 8;
+.project-card:nth-child(1) {
+  grid-column: span 6;
 }
 
 .project-card:nth-child(2) {
-  grid-column: span 4;
+  grid-column: 7 / span 5;
   padding-top: 110px;
 }
 
@@ -3073,15 +3084,24 @@ a {
 
 .project-visual {
   position: relative;
+
   display: flex;
-  min-height: 380px;
+  width: 100%;
+
+  min-height: 0;
+
   flex-direction: column;
+
   background: var(--pink-soft);
-  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  overflow: hidden;
+
+  transition:
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .project-card--featured .project-visual {
-  min-height: 560px;
+  min-height: 0;
 }
 
 .project-card--black .project-visual {
@@ -3105,12 +3125,21 @@ a {
   transform: scale(1.025);
 }
 
+.project-card:hover .project-visual__image {
+  transform: scale(1.04);
+}
+
 .project-visual__browser {
   display: flex;
+
   height: 42px;
+  flex: 0 0 42px;
+
   align-items: center;
   gap: 7px;
+
   padding: 0 16px;
+
   border-bottom: 1px solid currentColor;
 }
 
@@ -3121,11 +3150,31 @@ a {
   border-radius: 50%;
 }
 
+.project-visual__browser span:nth-child(1) {
+  background-color: #fd5959;
+}
+
+.project-visual__browser span:nth-child(2) {
+  background-color: #fd9e1f;
+}
+
+.project-visual__browser span:nth-child(3) {
+  background-color: #24c163;
+}
+
 .project-visual__content {
-  display: grid;
-  flex: 1;
-  place-content: center;
-  text-align: center;
+  position: relative;
+
+  display: block;
+  width: 100%;
+
+  aspect-ratio: 1920 / 1077;
+
+  min-height: 0;
+
+  flex: none;
+
+  overflow: hidden;
 }
 
 .project-visual__content span,
@@ -3880,7 +3929,7 @@ a {
 
   .project-card--featured .project-visual,
   .project-visual {
-    min-height: 400px;
+    min-height: 0;
   }
 
   .process__notes {

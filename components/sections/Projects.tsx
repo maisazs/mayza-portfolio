@@ -10,9 +10,11 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 function ProjectVisual({
   name,
   category,
+  image
 }: {
   name: string;
   category: string;
+  image: string;
 }) {
   return (
     <div
@@ -27,14 +29,8 @@ function ProjectVisual({
       </div>
 
       <div className="project-visual__content">
-        <span>ADICIONAR</span>
-        <strong>CAPA DO PROJETO</strong>
-        <small>public/projects/</small>
+        <img className="project-visual__image" src={image} />
       </div>
-
-      <span className="project-visual__category">
-        {category}
-      </span>
     </div>
   );
 }
@@ -154,10 +150,12 @@ export function Projects() {
                 className="project-card__visual-link"
                 href={project.link}
                 aria-label={`Abrir projeto ${project.name}`}
+                target="_blank"
               >
                 <ProjectVisual
                   name={project.name}
                   category={project.category}
+                  image={project.image}
                 />
               </a>
 
@@ -201,7 +199,7 @@ export function Projects() {
                 </details>
 
                 <div className="project-card__links">
-                  <a href={project.link}>
+                  <a href={project.link} target="_blank">
                     Ver projeto{" "}
                     <span aria-hidden="true">↗</span>
                   </a>
