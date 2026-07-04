@@ -7,10 +7,12 @@ type ProjectCardProps = {
 
 function ProjectVisual({
     name,
+    category,
     image,
 }: {
     name: string;
-    image: string;
+    category: string;
+    image?: string;
 }) {
     return (
         <div className="project-visual">
@@ -24,13 +26,23 @@ function ProjectVisual({
             </div>
 
             <div className="project-visual__content">
-                <img
-                    className="project-visual__image"
-                    src={image}
-                    alt={`Capa do projeto ${name}`}
-                    loading="lazy"
-                    draggable={false}
-                />
+                {image ? (
+                    <img
+                        className="project-visual__image"
+                        src={image}
+                        alt={`Capa do projeto ${name}`}
+                        loading="lazy"
+                        draggable={false}
+                    />
+                ) : (
+                    <div className="project-visual__placeholder">
+                        <span>CAPA EM BREVE</span>
+
+                        <strong>{name}</strong>
+
+                        <small>{category}</small>
+                    </div>
+                )}
             </div>
         </div>
     );
@@ -56,6 +68,7 @@ export function ProjectCard({
             >
                 <ProjectVisual
                     name={project.name}
+                    category={project.category}
                     image={project.image}
                 />
             </a>

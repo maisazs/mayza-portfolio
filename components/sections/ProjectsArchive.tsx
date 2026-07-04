@@ -69,30 +69,6 @@ export function ProjectsArchive() {
             className="projects-archive section-shell"
             aria-labelledby="projects-archive-title"
         >
-            <div className="projects-archive__heading">
-                <div>
-                    <p className="eyebrow">
-                        Arquivo de projetos /{" "}
-                        {String(projects.length).padStart(2, "0")}
-                    </p>
-
-                    <h2
-                        id="projects-archive-title"
-                        className="projects-archive__title"
-                    >
-                        Sites, interfaces e experiências que
-                        ganharam forma.
-                    </h2>
-                </div>
-
-                <p className="projects-archive__description">
-                    Uma seleção completa dos projetos que
-                    desenvolvi, reunindo estratégia visual,
-                    estrutura, responsividade e atenção aos
-                    detalhes.
-                </p>
-            </div>
-
             <div className="projects-archive__grid">
                 {projects.map((project, index) => (
                     <ProjectCard

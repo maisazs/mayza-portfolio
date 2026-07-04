@@ -134,3 +134,55 @@ Substitua os quatro arquivos nos caminhos correspondentes:
 - Não reaparece durante a navegação interna entre as duas páginas.
 
 Isso acontece porque o loader foi movido para o `RootLayout`, que permanece montado durante as navegações do App Router.
+
+# Projetos completos
+
+## Arquivos
+
+Substitua:
+
+- `data/projects.ts`
+- `components/projects/ProjectCard.tsx`
+
+Adicione o conteúdo de:
+
+- `app/globals-project-placeholder.css`
+
+ao final do seu `app/globals.css`.
+
+## Home
+
+Os quatro projetos atuais estão com:
+
+```ts
+showOnHome: true
+```
+
+Os demais estão com:
+
+```ts
+showOnHome: false
+```
+
+A seleção da home é feita com:
+
+```ts
+export const homeProjects =
+  projects.filter(
+    (project) => project.showOnHome,
+  );
+```
+
+## Imagens
+
+Os novos projetos estão sem a propriedade `image`.
+
+Enquanto as capas não forem adicionadas, o card exibe um placeholder visual.
+
+Depois, basta incluir em cada projeto:
+
+```ts
+image: withBasePath(
+  "/images/nome-da-capa.png",
+),
+```

@@ -29,20 +29,16 @@ export default function ProjectsPage() {
             >
                 <section className="projects-page__hero section-shell">
                     <div className="projects-page__hero-copy">
-                        <p className="eyebrow">
-                            Portfólio / Projetos
-                        </p>
-
                         <h1 className="projects-page__title">
-                            Projetos que unem estrutura,
-                            interface e movimento.
+                            Sites, interfaces e experiências que
+                            ganharam forma.
                         </h1>
 
                         <p className="projects-page__description">
-                            Uma seleção completa de sites e
-                            experiências digitais desenvolvidas com
-                            atenção à narrativa, responsividade,
-                            clareza e detalhes.
+                            Uma seleção completa dos projetos que
+                            desenvolvi, reunindo estratégia visual,
+                            estrutura, responsividade e atenção aos
+                            detalhes.
                         </p>
 
                         <div className="projects-page__actions">

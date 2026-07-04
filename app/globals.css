@@ -4469,11 +4469,12 @@ body.is-loading {
 
 .projects-page__hero {
   position: relative;
+  z-index: 1;
 
   display: flex;
 
   min-height:
-    min(820px, 92svh);
+    clamp(620px, 76svh, 760px);
 
   align-items: center;
   justify-content: space-between;
@@ -4482,46 +4483,54 @@ body.is-loading {
     clamp(56px, 8vw, 130px);
 
   padding-top:
-    clamp(150px, 17svh, 210px);
+    clamp(130px, 14svh, 180px);
 
   padding-bottom:
-    clamp(84px, 10vw, 150px);
+    clamp(54px, 6vw, 82px);
 
-  border-bottom:
-    1px solid var(--ink);
+  /* Remove a linha divisória */
+  border-bottom: 0;
 
   isolation: isolate;
-  overflow: hidden;
+
+  /*
+   * Permite que os círculos continuem
+   * visualmente na seção de projetos.
+   */
+  overflow: visible;
 }
 
 .projects-page__hero::before {
   position: absolute;
   z-index: -1;
 
-  top: 14%;
+  top: 4%;
   right: -8%;
 
   width:
-    clamp(320px, 38vw, 620px);
+    clamp(420px, 42vw, 700px);
 
   aspect-ratio: 1;
 
   border:
     1px solid rgba(5, 5, 5, 0.14);
+
   border-radius: 50%;
 
   content: "";
+
+  pointer-events: none;
 }
 
 .projects-page__hero::after {
   position: absolute;
   z-index: -2;
 
-  right: 8%;
-  bottom: -22%;
+  right: 7%;
+  bottom: -38%;
 
   width:
-    clamp(260px, 34vw, 520px);
+    clamp(380px, 38vw, 640px);
 
   aspect-ratio: 1;
 
@@ -4530,6 +4539,8 @@ body.is-loading {
   background: var(--pink-soft);
 
   content: "";
+
+  pointer-events: none;
 }
 
 .projects-page__hero-copy {
@@ -4674,9 +4685,10 @@ body.is-loading {
 
 .projects-archive {
   position: relative;
+  z-index: 2;
 
   padding-top:
-    clamp(96px, 10vw, 160px);
+    clamp(54px, 6vw, 90px);
 
   padding-bottom:
     clamp(120px, 14vw, 210px);
@@ -4725,38 +4737,52 @@ body.is-loading {
   line-height: 1.7;
 }
 
-.projects-archive__grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(12, minmax(0, 1fr));
-
-  gap:
-    clamp(52px, 7vw, 108px) clamp(24px, 3vw, 44px);
-
-  align-items: start;
-}
-
 /*
  * Estas regras neutralizam somente dentro da página
  * interna os nth-child usados pela composição da home.
  */
-.projects-archive__grid>.project-card {
-  grid-column: span 6;
+
+.projects-archive__grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+
+  gap:
+    clamp(48px, 6vw, 90px) clamp(20px, 2.5vw, 36px);
+
+  align-items: start;
+}
+
+.projects-archive__grid>.project-card,
+.projects-archive__grid>.project-card:nth-child(odd),
+.projects-archive__grid>.project-card:nth-child(even) {
+  grid-column: span 4;
 
   margin-top: 0;
   padding-top: 0;
 }
 
-.projects-archive__grid>.project-card:nth-child(odd) {
-  grid-column: span 7;
+@media (max-width: 1100px) {
+
+  .projects-archive__grid>.project-card,
+  .projects-archive__grid>.project-card:nth-child(odd),
+  .projects-archive__grid>.project-card:nth-child(even) {
+    grid-column: span 6;
+  }
 }
 
-.projects-archive__grid>.project-card:nth-child(even) {
-  grid-column: span 5;
+@media (max-width: 720px) {
+  .projects-archive__grid {
+    grid-template-columns: 1fr;
+  }
 
-  margin-top:
-    clamp(58px, 7vw, 104px);
+  .projects-archive__grid>.project-card,
+  .projects-archive__grid>.project-card:nth-child(odd),
+  .projects-archive__grid>.project-card:nth-child(even) {
+    grid-column: auto;
+
+    margin-top: 0;
+    padding-top: 0;
+  }
 }
 
 /* =========================================================
@@ -4775,20 +4801,30 @@ body.is-loading {
     align-items: flex-start;
     flex-direction: column;
 
-    padding-top: 140px;
+    gap: 60px;
+
+    padding-top: 130px;
+    padding-bottom: 70px;
+
+    overflow: visible;
   }
 
-  .projects-page__stamp {
-    width:
-      min(300px, 70vw);
+  .projects-page__hero::after {
+    right: -12%;
+    bottom: -20%;
 
-    align-self: center;
+    width:
+      min(520px, 74vw);
   }
 
   .projects-page__tape {
     top: auto;
     right: 12%;
     bottom: 24%;
+  }
+
+  .projects-archive {
+    padding-top: 64px;
   }
 
   .projects-archive__heading {
@@ -4810,10 +4846,17 @@ body.is-loading {
   }
 
   .projects-page__hero {
-    gap: 56px;
+    gap: 46px;
 
-    padding-top: 118px;
-    padding-bottom: 76px;
+    padding-top: 112px;
+    padding-bottom: 52px;
+  }
+
+  .projects-page__hero {
+    gap: 46px;
+
+    padding-top: 112px;
+    padding-bottom: 52px;
   }
 
   .projects-page__title {
@@ -4851,7 +4894,7 @@ body.is-loading {
   }
 
   .projects-archive {
-    padding-top: 86px;
+    padding-top: 64px;
   }
 
   .projects-archive__heading {
@@ -4887,4 +4930,64 @@ body.is-loading {
     visibility: visible !important;
     transform: none !important;
   }
+}
+
+/* =========================================================
+   PLACEHOLDER DAS CAPAS DE PROJETOS
+========================================================= */
+
+.project-visual__placeholder {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  gap: 10px;
+
+  padding: clamp(22px, 4vw, 54px);
+
+  text-align: center;
+}
+
+.project-visual__placeholder::before {
+  position: absolute;
+
+  inset: 14px;
+
+  border:
+    1px dashed currentColor;
+
+  content: "";
+
+  opacity: 0.22;
+
+  pointer-events: none;
+}
+
+.project-visual__placeholder span,
+.project-visual__placeholder strong,
+.project-visual__placeholder small {
+  position: relative;
+  z-index: 1;
+}
+
+.project-visual__placeholder strong {
+  max-width: 92%;
+
+  margin: 6px auto;
+
+  font-size:
+    clamp(30px, 3.5vw, 58px);
+}
+
+.project-visual__placeholder small {
+  max-width: 80%;
+
+  line-height: 1.5;
+  text-transform: uppercase;
 }
