@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { type CSSProperties, type TouchEvent, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 
 import { gsap } from "@/lib/gsap";
@@ -9,6 +9,68 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function Timeline() {
   const root = useRef<HTMLElement>(null);
+  const touchStartX = useRef<number | null>(null);
+
+  const [mobileIndex, setMobileIndex] =
+    useState(0);
+
+  const totalItems = timelineItems.length;
+
+  const goToMobileSlide = (
+    index: number,
+  ) => {
+    const normalizedIndex =
+      (index + totalItems) % totalItems;
+
+    setMobileIndex(normalizedIndex);
+  };
+
+  const showPreviousMobileSlide = () => {
+    goToMobileSlide(mobileIndex - 1);
+  };
+
+  const showNextMobileSlide = () => {
+    goToMobileSlide(mobileIndex + 1);
+  };
+
+  const handleTouchStart = (
+    event: TouchEvent<HTMLDivElement>,
+  ) => {
+    touchStartX.current =
+      event.touches[0]?.clientX ?? null;
+  };
+
+  const handleTouchEnd = (
+    event: TouchEvent<HTMLDivElement>,
+  ) => {
+    if (touchStartX.current === null) {
+      return;
+    }
+
+    const touchEndX =
+      event.changedTouches[0]?.clientX;
+
+    if (touchEndX === undefined) {
+      touchStartX.current = null;
+      return;
+    }
+
+    const distance =
+      touchStartX.current - touchEndX;
+
+    touchStartX.current = null;
+
+    if (Math.abs(distance) < 45) {
+      return;
+    }
+
+    if (distance > 0) {
+      showNextMobileSlide();
+      return;
+    }
+
+    showPreviousMobileSlide();
+  };
 
   useGSAP(
     () => {
@@ -17,16 +79,24 @@ export function Timeline() {
       mm.add(
         {
           desktop: "(min-width: 1024px)",
-          mobile: "(max-width: 1023px)",
-          reduceMotion: "(prefers-reduced-motion: reduce)",
+          tablet:
+            "(min-width: 721px) and (max-width: 1023px)",
+          mobile: "(max-width: 720px)",
+          reduceMotion:
+            "(prefers-reduced-motion: reduce)",
         },
         (context) => {
-          const { desktop, mobile, reduceMotion } =
-            context.conditions as {
-              desktop: boolean;
-              mobile: boolean;
-              reduceMotion: boolean;
-            };
+          const {
+            desktop,
+            tablet,
+            mobile,
+            reduceMotion,
+          } = context.conditions as {
+            desktop: boolean;
+            tablet: boolean;
+            mobile: boolean;
+            reduceMotion: boolean;
+          };
 
           if (reduceMotion) {
             return;
@@ -36,9 +106,38 @@ export function Timeline() {
             gsap.utils.toArray<HTMLElement>(".timeline-card");
 
           const dots =
-            gsap.utils.toArray<HTMLElement>(
+            gsap.utils.toArray<HTMLButtonElement>(
               ".timeline-index__dot",
             );
+
+          const dotCleanups: Array<
+            () => void
+          > = [];
+
+          const setActiveDot = (
+            activeIndex: number,
+          ) => {
+            dots.forEach((dot, index) => {
+              const isActive =
+                index === activeIndex;
+
+              dot.classList.toggle(
+                "is-active",
+                isActive,
+              );
+
+              if (isActive) {
+                dot.setAttribute(
+                  "aria-current",
+                  "step",
+                );
+              } else {
+                dot.removeAttribute(
+                  "aria-current",
+                );
+              }
+            });
+          };
 
           const bookTimeline = gsap.timeline({
             scrollTrigger: {
@@ -113,7 +212,7 @@ export function Timeline() {
               rotate: 0,
             });
 
-            dots[0]?.classList.add("is-active");
+            setActiveDot(0);
 
             const timeline = gsap.timeline({
               scrollTrigger: {
@@ -168,26 +267,58 @@ export function Timeline() {
                     duration: 0.55,
 
                     onStart: () => {
-                      dots.forEach((dot) =>
-                        dot.classList.remove("is-active"),
-                      );
-
-                      dots[index]?.classList.add("is-active");
+                      setActiveDot(index);
                     },
 
                     onReverseComplete: () => {
-                      dots.forEach((dot) =>
-                        dot.classList.remove("is-active"),
+                      setActiveDot(
+                        Math.max(0, index - 1),
                       );
-
-                      dots[
-                        Math.max(0, index - 1)
-                      ]?.classList.add("is-active");
                     },
                   },
                   index,
                 );
             });
+
+            const stageScrollTrigger =
+              timeline.scrollTrigger;
+
+            if (stageScrollTrigger) {
+              dots.forEach((dot, index) => {
+                const handleClick = () => {
+                  const lastIndex =
+                    timelineItems.length - 1;
+
+                  const targetProgress =
+                    lastIndex <= 0
+                      ? 0
+                      : index / lastIndex;
+
+                  const targetScroll =
+                    stageScrollTrigger.start +
+                    (stageScrollTrigger.end -
+                      stageScrollTrigger.start) *
+                    targetProgress;
+
+                  window.scrollTo({
+                    top: targetScroll,
+                    behavior: "smooth",
+                  });
+                };
+
+                dot.addEventListener(
+                  "click",
+                  handleClick,
+                );
+
+                dotCleanups.push(() => {
+                  dot.removeEventListener(
+                    "click",
+                    handleClick,
+                  );
+                });
+              });
+            }
 
             gsap.to(".timeline__orb", {
               rotate: 240,
@@ -204,7 +335,7 @@ export function Timeline() {
             });
           }
 
-          if (mobile) {
+          if (tablet) {
             cards.forEach((card) => {
               gsap.from(card, {
                 y: 32,
@@ -215,10 +346,32 @@ export function Timeline() {
                 scrollTrigger: {
                   trigger: card,
                   start: "top 84%",
+                  once: true,
                 },
               });
             });
           }
+
+          if (mobile) {
+            gsap.from(".timeline__stage", {
+              y: 34,
+              opacity: 0,
+              duration: 0.75,
+              ease: "power3.out",
+
+              scrollTrigger: {
+                trigger: ".timeline__stage",
+                start: "top 86%",
+                once: true,
+              },
+            });
+          }
+
+          return () => {
+            dotCleanups.forEach(
+              (cleanup) => cleanup(),
+            );
+          };
         },
       );
 
@@ -567,43 +720,156 @@ export function Timeline() {
       <div className="timeline__stage">
         <div
           className="timeline-index"
-          aria-hidden="true"
+          aria-label="Navegação da trajetória"
         >
-          <div className="timeline-progress">
+          <div
+            className="timeline-progress"
+            aria-hidden="true"
+          >
             <span className="timeline-progress__fill" />
           </div>
 
           {timelineItems.map((item, index) => (
-            <span
+            <button
               key={item.title}
               className="timeline-index__dot"
+              type="button"
+              aria-label={`Ver etapa ${index + 1}: ${item.title}`}
             >
-              {String(index + 1).padStart(2, "0")}
+              {String(index + 1).padStart(
+                2,
+                "0",
+              )}
+            </button>
+          ))}
+        </div>
+
+        <div
+          className="timeline__cards"
+          role="region"
+          aria-roledescription="carrossel"
+          aria-label="Etapas da trajetória profissional"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          <div
+            className="timeline__cards-track"
+            style={
+              {
+                "--timeline-mobile-offset":
+                  `${mobileIndex * -100}%`,
+              } as CSSProperties
+            }
+          >
+            {timelineItems.map(
+              (item, index) => (
+                <article
+                  key={item.title}
+                  className="timeline-card"
+                  role="group"
+                  aria-roledescription="slide"
+                  aria-label={`Etapa ${index + 1} de ${totalItems}`}
+                >
+                  <div className="timeline-card__meta">
+                    <span>
+                      {item.kicker}
+                    </span>
+
+                    <strong>
+                      {item.year}
+                    </strong>
+                  </div>
+
+                  <h3>{item.title}</h3>
+
+                  <p>
+                    {item.description}
+                  </p>
+
+                  <div className="timeline-card__number">
+                    {String(
+                      index + 1,
+                    ).padStart(2, "0")}
+                  </div>
+                </article>
+              ),
+            )}
+          </div>
+        </div>
+
+        <div
+          className="timeline-carousel__controls"
+          aria-label="Controles do carrossel da trajetória"
+        >
+          <button
+            className="timeline-carousel__arrow"
+            type="button"
+            aria-label="Ver etapa anterior"
+            onClick={
+              showPreviousMobileSlide
+            }
+          >
+            <span aria-hidden="true">
+              ←
             </span>
-          ))}
+          </button>
+
+          <div className="timeline-carousel__dots">
+            {timelineItems.map(
+              (item, index) => {
+                const isActive =
+                  index === mobileIndex;
+
+                return (
+                  <button
+                    key={item.title}
+                    className={`timeline-carousel__dot ${isActive
+                        ? "is-active"
+                        : ""
+                      }`}
+                    type="button"
+                    aria-label={`Ir para etapa ${index + 1}: ${item.title}`}
+                    aria-current={
+                      isActive
+                        ? "step"
+                        : undefined
+                    }
+                    onClick={() =>
+                      goToMobileSlide(
+                        index,
+                      )
+                    }
+                  />
+                );
+              },
+            )}
+          </div>
+
+          <button
+            className="timeline-carousel__arrow"
+            type="button"
+            aria-label="Ver próxima etapa"
+            onClick={
+              showNextMobileSlide
+            }
+          >
+            <span aria-hidden="true">
+              →
+            </span>
+          </button>
         </div>
 
-        <div className="timeline__cards">
-          {timelineItems.map((item, index) => (
-            <article
-              key={item.title}
-              className="timeline-card"
-            >
-              <div className="timeline-card__meta">
-                <span>{item.kicker}</span>
-                <strong>{item.year}</strong>
-              </div>
-
-              <h3>{item.title}</h3>
-
-              <p>{item.description}</p>
-
-              <div className="timeline-card__number">
-                {String(index + 1).padStart(2, "0")}
-              </div>
-            </article>
-          ))}
-        </div>
+        <p
+          className="timeline-carousel__status"
+          aria-live="polite"
+        >
+          Etapa {mobileIndex + 1} de{" "}
+          {totalItems}:{" "}
+          {
+            timelineItems[mobileIndex]
+              ?.title
+          }
+        </p>
 
         <div
           className="timeline__aside"
@@ -615,7 +881,10 @@ export function Timeline() {
             <span>BUILDING</span>
           </div>
 
-          <p>scroll para acompanhar a progressão</p>
+          <p>
+            scroll para acompanhar a
+            progressão
+          </p>
         </div>
       </div>
     </section>
