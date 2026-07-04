@@ -553,6 +553,10 @@
 }
 
 @media (max-width: 720px) {
+    .portraitImage {
+        margin-top: -10%;
+    }
+
     .hero {
         padding: 104px 20px 42px;
     }
@@ -684,6 +688,7 @@
         flex-direction: column;
         gap: 34px;
         margin-top: 42px;
+        background-color: transparent;
     }
 
     .actions {

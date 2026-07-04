@@ -353,7 +353,7 @@ export function Hero() {
             Ver projetos <span aria-hidden="true">↘</span>
           </a>
 
-          <a className="button button--ghost" href="#contato">
+          <a className="button button--ghost" href="https://wa.me/5531992166917" target="_blank" rel="noopener noreferrer">
             Falar comigo <span aria-hidden="true">✦</span>
           </a>
         </div>
